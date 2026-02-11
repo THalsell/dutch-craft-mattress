@@ -808,6 +808,8 @@ export const collections: Collection[] = [
     slug: "legacy-elite-hd",
     name: "Legacy Elite HD",
     description: "Premium high-density construction for lasting comfort and support.",
+    image: "/collections/legacy-elite-hd/legacy-card.png",
+    heroImage: "/collections/legacy-elite-hd/legacy-hero.png",
     modelBoxColor: "#2d3246",
     warranty: "",
     features: "",
