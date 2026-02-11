@@ -34,7 +34,7 @@ export interface ModelDetails {
   quiltLayer?: string;
   coverFabric?: string;
   supportSystem?: string;
-  design?: string;
+  design?: string | string[];
   coilCount?: CoilCount;
   specs?: MattressSpecs;
   performance?: string[];
@@ -800,6 +800,90 @@ export const collections: Collection[] = [
               "Graphite-infused memory foam dissipates heat for a cooler, more durable sleep",
               "Quantum Edge pocket coil provides premium individually encased edge-to-edge support",
             ] },
+        ],
+      } },
+    ],
+  },
+  {
+    slug: "legacy-elite-hd",
+    name: "Legacy Elite HD",
+    description: "Premium high-density construction for lasting comfort and support.",
+    modelBoxColor: "#2d3246",
+    warranty: "",
+    features: "",
+    heroColor: "#3d4356",
+    models: [
+      { name: "Endurance", details: "Available in Firm, Plush, and Pillow Top.", modelDetails: {
+        subtitle: "Firm",
+        alsoAvailable: "Plush and Pillow Top Models Available",
+        comfortLevel: "Firm / Plush / Pillow Top",
+        supportSystem: "8\" Quantum Foam Encased Support Core",
+        design: [
+          "Firm: 12½\" — 1\" Natural Latex, 2\" Support Foam, 8\" Quantum Foam Encased",
+          "Plush: 14½\" — 2\" Natural Latex, 2\" Comfort Foam, 8\" Quantum Foam Encased",
+          "Pillow Top: 16½\" — 2\" Natural Latex, 3\" Comfort Foam, 8\" Quantum Foam Encased",
+        ],
+        specs: { warranty: "20-Year Warranty", height: "12½\" / 14½\" / 16½\"" },
+        performance: [
+          "Natural latex provides responsive, breathable comfort",
+          "Quantum foam encased core delivers edge-to-edge support",
+          "Available in three comfort levels for personalized feel",
+          "20-year warranty for lasting durability",
+        ],
+        diagrams: [
+          { label: "Firm", diagram: "/collections/legacy-elite-hd/endurance-firm-diagram.png", iconsImage: "/collections/legacy-elite-hd/harmony-hybrid-plush-icon.png" },
+          { label: "Plush", diagram: "/collections/legacy-elite-hd/endurance-plush-diagram.png", iconsImage: "/collections/legacy-elite-hd/harmony-hybrid-plush-icon.png" },
+          { label: "Pillow Top", diagram: "/collections/legacy-elite-hd/endurance-pt-diagram.png", iconsImage: "/collections/legacy-elite-hd/harmony-hybrid-plush-icon.png" },
+        ],
+      } },
+      { name: "Courage", details: "Available in Pillow Top.", modelDetails: {
+        subtitle: "Pillow Top",
+        comfortLevel: "Pillow Top",
+        supportSystem: "8\" Quantum Foam Encased Support Core",
+        design: "16½\" pillow top with 2\" Avena® foam, 1\" natural latex, and 1\" NanoCoil® over an 8\" Quantum foam encased support core",
+        specs: { warranty: "20-Year Warranty", height: "16½\"" },
+        performance: [
+          "Avena® foam provides enhanced airflow and responsive comfort",
+          "Natural latex layer adds durable, buoyant support",
+          "NanoCoil® technology delivers targeted pressure relief",
+          "Quantum foam encased core for edge-to-edge support",
+        ],
+        diagrams: [
+          { label: "Pillow Top", diagram: "/collections/legacy-elite-hd/courage-pt-diagram.png", iconsImage: "/collections/legacy-elite-hd/courage-icons.png" },
+        ],
+      } },
+      { name: "Paramount", details: "Available in Pillow Top.", modelDetails: {
+        subtitle: "Pillow Top",
+        comfortLevel: "Pillow Top",
+        supportSystem: "8\" Quantum Foam Encased Support Core",
+        design: "16½\" pillow top with 2\" 4-lb memory foam, 2\" natural latex, and 2\" comfort foam over an 8\" Quantum foam encased support core",
+        specs: { warranty: "20-Year Warranty", height: "16½\"" },
+        performance: [
+          "4-lb memory foam contours to the body for pressure relief",
+          "Natural latex provides responsive, breathable support",
+          "Comfort foam adds an extra layer of cushioning",
+          "Quantum foam encased core for edge-to-edge support",
+        ],
+        diagrams: [
+          { label: "Pillow Top", diagram: "/collections/legacy-elite-hd/paramount-pt-diagram.png", iconsImage: "/collections/legacy-elite-hd/harmony-hybrid-plush-icon.png" },
+        ],
+      } },
+      { name: "Harmony Hybrid", details: "Available in Luxury Firm and Plush.", modelDetails: {
+        subtitle: "Luxury Firm",
+        alsoAvailable: "Plush Model Available",
+        comfortLevel: "Luxury Firm / Plush",
+        supportSystem: "8\" Quantum Foam Encased Support Core",
+        design: "15\" hybrid design with 2\" 4-lb memory foam and 2\" comfort foam over an 8\" Quantum foam encased support core",
+        specs: { warranty: "20-Year Warranty", height: "15\"" },
+        performance: [
+          "4-lb memory foam contours to the body for pressure relief",
+          "Comfort foam adds cushioning and responsiveness",
+          "Quantum foam encased core for edge-to-edge support",
+          "Available in Luxury Firm and Plush comfort levels",
+        ],
+        diagrams: [
+          { label: "Luxury Firm", diagram: "/collections/legacy-elite-hd/harmony-firm-diagram.png", iconsImage: "/collections/legacy-elite-hd/harmony-hybrid-plush-icon.png" },
+          { label: "Plush", diagram: "/collections/legacy-elite-hd/harmony-plush-diagram.png", iconsImage: "/collections/legacy-elite-hd/harmony-hybrid-plush-icon.png" },
         ],
       } },
     ],

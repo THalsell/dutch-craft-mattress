@@ -107,7 +107,18 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
                     <div className="space-y-2 text-sm text-slate">
                       {model.modelDetails.comfortLevel && <p><span className="font-medium text-charcoal">Comfort Level:</span> {model.modelDetails.comfortLevel}</p>}
                       {model.modelDetails.coverFabric && <p><span className="font-medium text-charcoal">Cover Fabric:</span> {model.modelDetails.coverFabric}</p>}
-                      {model.modelDetails.design && <p><span className="font-medium text-charcoal">Design:</span> {model.modelDetails.design}</p>}
+                      {model.modelDetails.design && (
+                        Array.isArray(model.modelDetails.design) ? (
+                          <div>
+                            <span className="font-medium text-charcoal">Design:</span>
+                            <ul className="mt-1 space-y-1 text-left list-disc list-inside">
+                              {model.modelDetails.design.map((line, i) => <li key={i}>{line}</li>)}
+                            </ul>
+                          </div>
+                        ) : (
+                          <p><span className="font-medium text-charcoal">Design:</span> {model.modelDetails.design}</p>
+                        )
+                      )}
                       {model.modelDetails.specs?.height && <p><span className="font-medium text-charcoal">Height:</span> {model.modelDetails.specs.height}</p>}
                       {model.modelDetails.specs?.warranty && <p><span className="font-medium text-charcoal">Warranty:</span> {model.modelDetails.specs.warranty}</p>}
                       {model.modelDetails.specs?.flippable && <p><span className="font-medium text-charcoal">Flippable:</span> {model.modelDetails.specs.flippable}</p>}

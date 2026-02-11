@@ -12,6 +12,7 @@ const collections = [
   { name: "Posture Perfect", slug: "posture-perfect" },
   { name: "Posture Perfect Gel", slug: "posture-perfect-gel" },
   { name: "Posture Perfect ICE", slug: "posture-perfect-ice" },
+  { name: "Legacy Elite HD", slug: "legacy-elite-hd" },
 ];
 
 const aboutSubLinks = [
