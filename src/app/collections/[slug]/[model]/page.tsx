@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
 import { collections, type Collection, type Model } from "@/src/data/collections";
+import DiagramCarousel from "@/src/components/DiagramCarousel";
 
 function slugify(name: string) {
   return name.toLowerCase().replace(/\s+/g, "-");
@@ -137,6 +138,11 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
                     className="mx-auto"
                   />
                 </div>
+              )}
+
+              {/* Diagrams Carousel */}
+              {model.modelDetails.diagrams && model.modelDetails.diagrams.length > 0 && (
+                <DiagramCarousel modelName={model.name} diagrams={model.modelDetails.diagrams} />
               )}
             </div>
           ) : (

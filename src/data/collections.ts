@@ -17,6 +17,15 @@ export interface MattressSpecs {
   flippable?: string;
 }
 
+export interface DiagramVariant {
+  label: string;
+  diagram: string;
+  iconsImage?: string;
+  height?: string;
+  design?: string;
+  performance?: string[];
+}
+
 export interface ModelDetails {
   subtitle?: string;
   firmModelAvailable?: boolean;
@@ -32,6 +41,7 @@ export interface ModelDetails {
   certifications?: string[];
   idealFor?: string[];
   iconsImage?: string;
+  diagrams?: DiagramVariant[];
 }
 
 export interface Model {
@@ -262,10 +272,10 @@ export const collections: Collection[] = [
       {
         name: "Nightfall",
         models: [
-          { name: "Grace", details: "Euro top with balanced comfort and edge support.", image: "/collections/nightfall/grace.png", mattressImage: "/collections/nightfall/grace-mattress.png", modelDetails: {
-            subtitle: "Euro Top",
+          { name: "Grace", details: "Pillow top with balanced comfort and edge support.", image: "/collections/nightfall/grace.png", mattressImage: "/collections/nightfall/grace-mattress.png", modelDetails: {
+            subtitle: "Pillow Top",
             alsoAvailable: "Firm and Plush Models Available",
-            comfortLevel: "Euro Top",
+            comfortLevel: "Pillow Top",
             coverFabric: "2\" HD Comfort Foam",
             supportSystem: "8\" Caliber Edge® Coil Unit",
             design: "2\" HD comfort foam with 1\" HD support base and 8\" Caliber Edge® coil unit",
@@ -277,6 +287,11 @@ export const collections: Collection[] = [
               "Consistent sleep surface",
             ],
             iconsImage: "/collections/nightfall/grace-icons.png",
+            diagrams: [
+              { label: "Firm", diagram: "/collections/nightfall/grace-firm-diagram.png" },
+              { label: "Plush", diagram: "/collections/nightfall/grace-plush-diagram.png" },
+              { label: "Pillow Top", diagram: "/collections/nightfall/grace-pt-diagram.png" },
+            ],
           } },
           { name: "Hope", details: "Pillow top with graphite memory foam and edge support.", image: "/collections/nightfall/nightfall-hope.png", mattressImage: "/collections/nightfall/hope.png", modelDetails: {
             subtitle: "Pillow Top",
@@ -293,6 +308,11 @@ export const collections: Collection[] = [
               "Reduced motion transfer",
             ],
             iconsImage: "/collections/nightfall/grace-icons.png",
+            diagrams: [
+              { label: "Firm", diagram: "/collections/nightfall/hope-firm-diagram.png" },
+              { label: "Plush", diagram: "/collections/nightfall/hope-plush-diagram.png" },
+              { label: "Pillow Top", diagram: "/collections/nightfall/hope-pt-diagram.png" },
+            ],
           } },
           { name: "Zion", details: "Available in Firm and Plush.", image: "/collections/nightfall/nightfall-zion.png", mattressImage: "/collections/nightfall/zion.png", modelDetails: {
             subtitle: "Firm",
@@ -309,6 +329,10 @@ export const collections: Collection[] = [
               "Reduced motion transfer",
             ],
             iconsImage: "/collections/nightfall/zion-icons.png",
+            diagrams: [
+              { label: "Firm", diagram: "/collections/nightfall/zion-firm-diagram.png" },
+              { label: "Plush", diagram: "/collections/nightfall/zion-plush-diagram.png" },
+            ],
           } },
           { name: "Solace", details: "Available in Plush and Firm.", image: "/collections/nightfall/nightfall-solace.png", mattressImage: "/collections/nightfall/solace.png", modelDetails: {
             subtitle: "Plush",
@@ -325,6 +349,10 @@ export const collections: Collection[] = [
               "Reduced motion transfer",
             ],
             iconsImage: "/collections/nightfall/zion-icons.png",
+            diagrams: [
+              { label: "Firm", diagram: "/collections/nightfall/solace-firm-diagram.png" },
+              { label: "Plush", diagram: "/collections/nightfall/solace-plush-diagram.png" },
+            ],
           } },
           { name: "Essence", details: "Available in Plush and Firm.", image: "/collections/nightfall/nightfall-essence.png", mattressImage: "/collections/nightfall/essence.png", modelDetails: {
             subtitle: "Plush",
@@ -341,6 +369,10 @@ export const collections: Collection[] = [
               "Reduced motion transfer",
             ],
             iconsImage: "/collections/nightfall/essence-icons.png",
+            diagrams: [
+              { label: "Firm", diagram: "/collections/nightfall/essence-firm-diagram.png" },
+              { label: "Plush", diagram: "/collections/nightfall/essence-plush-diagram.png" },
+            ],
           } },
           { name: "Serenity", details: "Pillow top with NanoCoil® layer and cooling fabric.", image: "/collections/nightfall/nightfall-serenity.png", mattressImage: "/collections/nightfall/serenity.png", modelDetails: {
             subtitle: "Pillow Top",
@@ -357,6 +389,11 @@ export const collections: Collection[] = [
               "Reduced motion transfer",
             ],
             iconsImage: "/collections/nightfall/serenity-icons.png",
+            diagrams: [
+              { label: "Firm", diagram: "/collections/nightfall/serenity-firm-diagram.png" },
+              { label: "Plush", diagram: "/collections/nightfall/serenity-plush-diagram.png" },
+              { label: "Pillow Top", diagram: "/collections/nightfall/serenity-pt-diagram.png" },
+            ],
           } },
           { name: "Ascend", details: "Pillow top with natural latex and HD plush foam.", image: "/collections/nightfall/nightfall-ascend.png", mattressImage: "/collections/nightfall/ascend.png", modelDetails: {
             subtitle: "Pillow Top",
@@ -372,6 +409,9 @@ export const collections: Collection[] = [
               "Reduced motion transfer",
             ],
             iconsImage: "/collections/nightfall/essence-icons.png",
+            diagrams: [
+              { label: "Pillow Top", diagram: "/collections/nightfall/ascend-pt-diagram.png" },
+            ],
           } },
           { name: "Peace", details: "Hybrid design with graphite memory foam and cooling fabric.", image: "/collections/nightfall/nightfall-peace.png", mattressImage: "/collections/nightfall/peace.png", modelDetails: {
             subtitle: "Hybrid",
@@ -387,6 +427,9 @@ export const collections: Collection[] = [
               "Reduced motion transfer",
             ],
             iconsImage: "/collections/nightfall/zion-icons.png",
+            diagrams: [
+              { label: "Hybrid", diagram: "/collections/nightfall/peace-hybrid-diagram.png" },
+            ],
           } },
           { name: "Patience", details: "Hybrid with graphite memory foam and cooling fabric.", image: "/collections/nightfall/nightfall-patience.png", mattressImage: "/collections/nightfall/patience.png", modelDetails: {
             subtitle: "Hybrid",
@@ -402,6 +445,9 @@ export const collections: Collection[] = [
               "Reduced motion transfer",
             ],
             iconsImage: "/collections/nightfall/zion-icons.png",
+            diagrams: [
+              { label: "Hybrid", diagram: "/collections/nightfall/patience-hybrid-diagram.png" },
+            ],
           } },
         ],
       },
@@ -423,6 +469,11 @@ export const collections: Collection[] = [
               "Durable, long-lasting comfort",
             ],
             iconsImage: "/collections/nightfall/cambridge-icons.png",
+            diagrams: [
+              { label: "Firm", diagram: "/collections/nightfall/bliss-firm-diagram.png" },
+              { label: "Plush", diagram: "/collections/nightfall/bliss-plush-diagram.png" },
+              { label: "Pillow Top", diagram: "/collections/nightfall/bliss-pt-diagram.png" },
+            ],
           } },
           { name: "Cambridge", details: "Two-sided flippable pillow top.", image: "/collections/nightfall/nightfall-cambridge.png", mattressImage: "/collections/nightfall/cambridge.png", modelDetails: {
             subtitle: "Pillow Top",
@@ -439,9 +490,15 @@ export const collections: Collection[] = [
               "Balanced comfort and stability",
             ],
             iconsImage: "/collections/nightfall/cambridge-icons.png",
+            diagrams: [
+              { label: "Firm", diagram: "/collections/nightfall/cambridge-firm-diagram.png" },
+              { label: "Plush", diagram: "/collections/nightfall/cambridge-plush-diagram.png" },
+              { label: "Pillow Top", diagram: "/collections/nightfall/cambridge-tp-diagram.png" },
+            ],
           } },
           { name: "Allure", details: "Two-sided flippable pillow top.", image: "/collections/nightfall/nightfall-allure.png", mattressImage: "/collections/nightfall/allure.png", modelDetails: {
             subtitle: "Pillow Top",
+            alsoAvailable: "Firm and Plush Models Available",
             comfortLevel: "Pillow Top",
             coverFabric: "1¾\" Plush Poly Foam",
             supportSystem: "8\" Caliber Edge® Coil Unit",
@@ -454,6 +511,11 @@ export const collections: Collection[] = [
               "Reduced motion transfer",
             ],
             iconsImage: "/collections/nightfall/allure-icons.png",
+            diagrams: [
+              { label: "Firm", diagram: "/collections/nightfall/allure-firm-diagram.png" },
+              { label: "Plush", diagram: "/collections/nightfall/allure-plush-diagram.png" },
+              { label: "Pillow Top", diagram: "/collections/nightfall/allure-pt-diagram.png" },
+            ],
           } },
         ],
       },
@@ -474,6 +536,9 @@ export const collections: Collection[] = [
               "Long-term structural integrity",
             ],
             iconsImage: "/collections/nightfall/regena-firm-icons.png",
+            diagrams: [
+              { label: "Firm", diagram: "/collections/nightfall/regena-firm-diagram.png" },
+            ],
           } },
           { name: "Regena Plush", details: "Resurgence Plus+ with Aarogy wellness technology.", image: "/collections/nightfall/nightfall-resurgence-regena-plush.png", mattressImage: "/collections/nightfall/regena-plush.png", modelDetails: {
             subtitle: "Plush",
@@ -489,6 +554,9 @@ export const collections: Collection[] = [
               "Reduced partner disturbance",
             ],
             iconsImage: "/collections/nightfall/regena-firm-icons.png",
+            diagrams: [
+              { label: "Plush", diagram: "/collections/nightfall/regena-plush-diagram.png" },
+            ],
           } },
         ],
       },
@@ -565,14 +633,14 @@ export const collections: Collection[] = [
         subtitle: "Plush",
         firmModelAvailable: true,
         comfortLevel: "Plush",
-        coverFabric: "Cool Touch Cover",
-        design: "All-foam construction delivers consistent comfort and motion isolation",
+        coverFabric: "Removable Zipper Cover",
+        design: "2\" graphite-infused memory foam, 8\" high-density foam with removable zipper cover",
         specs: { height: "10 inches", warranty: "12-Year Warranty" },
         performance: [
-          "Cool touch cover helps regulate surface temperature",
-          "Graphite-infused memory foam assists with heat dissipation and pressure relief",
-          "Compatible with adjustable bases",
-          "Designed for durability with a balanced plush feel",
+          "100% graphite-infused memory foam for enhanced heat dissipation",
+          "Cool Sleep Nitro cover for temperature regulation",
+          "Outstanding support with high-density foam core",
+          "Reduced motion transfer for undisturbed sleep",
         ],
         iconsImage: "/collections/posture-perfect-gel/aurora-icon.png",
       } },
@@ -580,14 +648,14 @@ export const collections: Collection[] = [
         subtitle: "Plush",
         firmModelAvailable: true,
         comfortLevel: "Plush",
-        coverFabric: "Cool Touch Cover",
-        design: "All-foam construction provides excellent motion isolation",
+        coverFabric: "Removable Zipper Cover",
+        design: "3\" graphite-infused memory foam, 2\" transitional foam, and 7\" high-density foam with removable zipper cover",
         specs: { height: "12 inches", warranty: "12-Year Warranty" },
         performance: [
-          "Cool touch cover helps regulate surface temperature",
-          "Graphite-infused memory foam promotes heat dissipation and pressure relief",
-          "Compatible with adjustable bases",
-          "Plush, contouring feel with reliable underlying support",
+          "100% graphite-infused memory foam for enhanced heat dissipation",
+          "Cool Sleep Nitro cover for temperature regulation",
+          "Outstanding support with high-density foam core",
+          "Reduced motion transfer for undisturbed sleep",
         ],
         iconsImage: "/collections/posture-perfect-gel/aurora-icon.png",
       } },
@@ -630,107 +698,110 @@ export const collections: Collection[] = [
     warranty: "15-year non-prorated warranty",
     features: "Bio based foam core with high density gel infused foam and removable zipper covers.",
     heroColor: "#a3d1e6",
-    subCollections: [
-      {
-        name: "Hybrid",
-        models: [
-          { name: "Hybrid Firm", details: "Firm hybrid with LURACOR® foam and Quantum Edge® coils.", modelDetails: {
-            subtitle: "Firm",
-            comfortLevel: "Firm",
-            coverFabric: "SNŌ Zipper Cover",
-            supportSystem: "8\" Quantum Edge® Pocket Coil Unit",
-            design: "SNŌ zipper cover with inner-cool PCM layer, 2\" 4 lb memory foam, 2\" LURACOR® firm foam, 8\" Quantum Edge® pocket coil unit, and 1½\" base foam",
-            specs: { height: "13.5 inches", warranty: "12-Year Warranty" },
-            performance: [
+    models: [
+      { name: "Hybrid HD", details: "Hybrid with LURACOR® foam and Quantum Edge® coils. Available in Firm, Medium, and Plush.", modelDetails: {
+        comfortLevel: "Firm / Medium / Plush",
+        coverFabric: "SNŌ Zipper Cover",
+        supportSystem: "8\" Quantum Foam Encased",
+        design: "SNŌ zipper cover with inner-cool PCM layer, 4 lb & 6 lb memory foam, LURACOR® foam, 8\" Quantum foam encased coils, and 1½\" base foam",
+        specs: { height: "14 inches", warranty: "12-Year Warranty" },
+        performance: [
+          "SNŌ cool-to-the-touch cover with advanced PE cooling fibers",
+          "Inner-cool phase change material regulates temperature throughout the night",
+          "6 lb memory foam provides ultimate durability, highest density, comfort & support",
+          "LURACOR® foam delivers deep, responsive support for proper alignment",
+          "Quantum foam encased coils provide a 360-degree comfortable border with great edge support",
+        ],
+        diagrams: [
+          { label: "Firm", diagram: "/collections/posture-perfect-ice/hybrid-hd-firm-diagram.png", iconsImage: "/collections/posture-perfect-ice/hybrid-hd-firm-icons.png", height: "14 inches", design: "SNŌ zipper cover with inner-cool PCM layer, 1½\" 4 lb memory foam, 1½\" 6 lb memory foam, 2\" LURACOR® firm foam, 8\" Quantum foam encased coils, and 1½\" base foam", performance: [
               "SNŌ cool-to-the-touch cover with advanced PE cooling fibers",
               "Inner-cool phase change material regulates temperature throughout the night",
-              "LURACOR® foam delivers deep, responsive support for proper alignment",
-              "Quantum Edge® pocket coils provide enhanced edge-to-edge support",
-            ],
-            iconsImage: "/collections/posture-perfect-ice/hybrid-hd-firm-icons.png",
-          } },
-          { name: "Hybrid Medium", details: "Medium hybrid with balanced comfort and responsive support.", modelDetails: {
-            subtitle: "Medium",
-            comfortLevel: "Medium",
-            coverFabric: "SNŌ Zipper Cover",
-            supportSystem: "8\" Quantum Edge® Pocket Coil Unit",
-            design: "SNŌ zipper cover with inner-cool PCM layer, 2\" 4 lb memory foam, 2\" LURACOR® soft foam, 8\" Quantum Edge® pocket coil unit, and 1½\" base foam",
-            specs: { height: "13.5 inches", warranty: "12-Year Warranty" },
-            performance: [
+              "6 lb memory foam provides ultimate durability, highest density, comfort & support",
+              "LURACOR® firm foam delivers deep, responsive support for proper alignment",
+              "Quantum foam encased coils provide a 360-degree comfortable border with great edge support",
+            ] },
+          { label: "Medium", diagram: "/collections/posture-perfect-ice/hybrid-hd-med-diagram.png", iconsImage: "/collections/posture-perfect-ice/foam-hd-plush-icons.png", height: "14 inches", design: "SNŌ zipper cover with inner-cool PCM layer, 1½\" 4 lb memory foam, 1½\" 6 lb memory foam, 2\" LURACOR® soft foam, 8\" Quantum foam encased coils, and 1½\" base foam", performance: [
+              "SNŌ cool-to-the-touch cover with advanced PE cooling fibers",
+              "Inner-cool phase change material regulates temperature throughout the night",
+              "6 lb memory foam provides ultimate durability, highest density, comfort & support",
+              "LURACOR® soft foam provides adaptive support with gentle responsiveness",
+              "Quantum foam encased coils provide a 360-degree comfortable border with great edge support",
+            ] },
+          { label: "Plush", diagram: "/collections/posture-perfect-ice/hybrid-hd-plush-diagram.png", iconsImage: "/collections/posture-perfect-ice/foam-hd-plush-icons.png", height: "14 inches", design: "SNŌ zipper cover with inner-cool PCM layer, 2\" graphite-infused memory foam, 2\" 4 lb memory foam, 2\" LURACOR® soft foam, 8\" Quantum foam encased coils, and 1½\" base foam", performance: [
+              "SNŌ cool-to-the-touch cover with advanced PE cooling fibers",
+              "Inner-cool phase change material regulates temperature throughout the night",
+              "Graphite-infused memory foam dissipates heat for a cooler, more durable sleep",
+              "LURACOR® soft foam provides adaptive support with gentle responsiveness",
+              "Quantum foam encased coils provide a 360-degree comfortable border with great edge support",
+            ] },
+        ],
+      } },
+      { name: "Foam HD", details: "All-foam with LURACOR® foam and HD foam core. Available in Firm, Medium, and Plush.", modelDetails: {
+        comfortLevel: "Firm / Medium / Plush",
+        coverFabric: "SNŌ Zipper Cover",
+        supportSystem: "High-Density Foam Core",
+        design: "SNŌ zipper cover with inner-cool PCM layer, 4 lb memory foam, LURACOR® foam, high-density foam core, and 1½\" base foam",
+        specs: { height: "12 inches", warranty: "15-Year Warranty" },
+        performance: [
+          "SNŌ cool-to-the-touch cover with advanced PE cooling fibers",
+          "Inner-cool phase change material regulates temperature throughout the night",
+          "LURACOR® foam delivers deep, responsive support for proper alignment",
+          "High-density foam core provides strength, durability, comfort & support",
+        ],
+        diagrams: [
+          { label: "Firm", diagram: "/collections/posture-perfect-ice/foam-hd-firm-diagram.png", iconsImage: "/collections/posture-perfect-ice/hybrid-hd-firm-icons.png", height: "12 inches", design: "SNŌ zipper cover with inner-cool PCM layer, 2\" 4 lb memory foam, 2\" LURACOR® firm foam, 8\" high-density foam core, and 1½\" base foam", performance: [
+              "SNŌ cool-to-the-touch cover with advanced PE cooling fibers",
+              "Inner-cool phase change material regulates temperature throughout the night",
+              "LURACOR® firm foam delivers deep, responsive support for proper alignment",
+              "8\" high-density foam core provides strength, durability, comfort & support",
+            ] },
+          { label: "Medium", diagram: "/collections/posture-perfect-ice/foam-hd-medium-diagram.png", iconsImage: "/collections/posture-perfect-ice/foam-hd-plush-icons.png", height: "12 inches", design: "SNŌ zipper cover with inner-cool PCM layer, 2\" 4 lb memory foam, 2\" LURACOR® soft foam, 8\" high-density foam core, and 1½\" base foam", performance: [
               "SNŌ cool-to-the-touch cover with advanced PE cooling fibers",
               "Inner-cool phase change material regulates temperature throughout the night",
               "LURACOR® soft foam provides adaptive support with gentle responsiveness",
-              "Quantum Edge® pocket coils provide enhanced edge-to-edge support",
-            ],
-            iconsImage: "/collections/posture-perfect-ice/foam-hd-plush-icons.png",
-          } },
-          { name: "Hybrid Plush", details: "Plush hybrid with graphite memory foam and deep pressure relief.", modelDetails: {
-            subtitle: "Plush",
-            comfortLevel: "Plush",
-            coverFabric: "SNŌ Zipper Cover",
-            supportSystem: "8\" Quantum Edge® Pocket Coil Unit",
-            design: "SNŌ zipper cover with inner-cool PCM layer, 2\" graphite-infused memory foam, 2\" 4 lb memory foam, 8\" Quantum Edge® pocket coil unit, and 1½\" base foam",
-            specs: { height: "13.5 inches", warranty: "12-Year Warranty" },
-            performance: [
+              "8\" high-density foam core provides strength, durability, comfort & support",
+            ] },
+          { label: "Plush", diagram: "/collections/posture-perfect-ice/foam-hd-plush.png", iconsImage: "/collections/posture-perfect-ice/foam-hd-plush-icons.png", height: "12 inches", design: "SNŌ zipper cover with inner-cool PCM layer, 2\" graphite-infused memory foam, 2\" 4 lb memory foam, 2\" Avena soft foam, 6\" HD foam core, and 1½\" base foam", performance: [
               "SNŌ cool-to-the-touch cover with advanced PE cooling fibers",
               "Inner-cool phase change material regulates temperature throughout the night",
-              "Graphite-infused memory foam helps dissipate heat while providing pressure relief",
-              "Quantum Edge® pocket coils provide enhanced edge-to-edge support",
-            ],
-            iconsImage: "/collections/posture-perfect-ice/foam-hd-plush-icons.png",
-          } },
+              "Graphite-infused memory foam dissipates heat for a cooler, more durable sleep",
+              "Avena soft foam provides a buoyant, springy, responsive feel without the stuck or sinking feeling",
+            ] },
         ],
-      },
-      {
-        name: "Foam HD",
-        models: [
-          { name: "Foam HD Firm", details: "All-foam firm with LURACOR® foam and HD foam core.", modelDetails: {
-            subtitle: "Firm",
-            comfortLevel: "Firm",
-            coverFabric: "SNŌ Zipper Cover",
-            supportSystem: "8\" High-Density Foam Core",
-            design: "SNŌ zipper cover with inner-cool PCM layer, 2\" 4 lb memory foam, 2\" LURACOR® firm foam, 8\" high-density foam core, and 1½\" base foam",
-            specs: { height: "12 inches", warranty: "15-Year Warranty" },
-            performance: [
+      } },
+      { name: "Hybrid", details: "Hybrid with Quantum Edge® pocket coils. Available in Firm, Medium, and Plush.", modelDetails: {
+        comfortLevel: "Firm / Medium / Plush",
+        coverFabric: "SNŌ Zipper Cover",
+        supportSystem: "8\" Quantum Edge Pocket Coil",
+        design: "SNŌ zipper cover with inner-cool PCM layer, 4 lb memory foam, LURACOR® foam, 8\" Quantum Edge pocket coil, and 1½\" base foam",
+        specs: { height: "13.5 inches", warranty: "12-Year Warranty" },
+        performance: [
+          "SNŌ cool-to-the-touch cover with advanced PE cooling fibers",
+          "Inner-cool phase change material regulates temperature throughout the night",
+          "LURACOR® foam delivers deep, responsive support for proper alignment",
+          "Quantum Edge pocket coil provides premium individually encased edge-to-edge support",
+        ],
+        diagrams: [
+          { label: "Firm", diagram: "/collections/posture-perfect-ice/hybrid-firm-diagram.png", iconsImage: "/collections/posture-perfect-ice/hybrid-hd-firm-icons.png", height: "13.5 inches", design: "SNŌ zipper cover with inner-cool PCM layer, 2\" 4 lb memory foam, 2\" LURACOR® firm foam, 8\" Quantum Edge pocket coil, and 1½\" base foam", performance: [
               "SNŌ cool-to-the-touch cover with advanced PE cooling fibers",
               "Inner-cool phase change material regulates temperature throughout the night",
-              "LURACOR® foam delivers deep, responsive support for proper alignment",
-              "All-foam construction for strong, stable support without coils",
-            ],
-            iconsImage: "/collections/posture-perfect-ice/hybrid-hd-firm-icons.png",
-          } },
-          { name: "Foam HD Medium", details: "All-foam medium with balanced contouring and cooling.", modelDetails: {
-            subtitle: "Medium",
-            comfortLevel: "Medium",
-            coverFabric: "SNŌ Zipper Cover",
-            supportSystem: "8\" High-Density Foam Core",
-            design: "SNŌ zipper cover with inner-cool PCM layer, 2\" 4 lb memory foam, 2\" LURACOR® soft foam, 8\" high-density foam core, and 1½\" base foam",
-            specs: { height: "12 inches", warranty: "15-Year Warranty" },
-            performance: [
+              "LURACOR® firm foam delivers deep, responsive support for proper alignment",
+              "Quantum Edge pocket coil provides premium individually encased edge-to-edge support",
+            ] },
+          { label: "Medium", diagram: "/collections/posture-perfect-ice/hybrid-medium-diagram.png", iconsImage: "/collections/posture-perfect-ice/foam-hd-plush-icons.png", height: "13.5 inches", design: "SNŌ zipper cover with inner-cool PCM layer, 2\" 4 lb memory foam, 2\" LURACOR® soft foam, 8\" Quantum Edge pocket coil, and 1½\" base foam", performance: [
               "SNŌ cool-to-the-touch cover with advanced PE cooling fibers",
               "Inner-cool phase change material regulates temperature throughout the night",
               "LURACOR® soft foam provides adaptive support with gentle responsiveness",
-              "All-foam construction for consistent comfort and motion isolation",
-            ],
-            iconsImage: "/collections/posture-perfect-ice/foam-hd-plush-icons.png",
-          } },
-          { name: "Foam HD Plush", details: "All-foam plush with graphite memory foam and Avena foam.", modelDetails: {
-            subtitle: "Plush",
-            comfortLevel: "Plush",
-            coverFabric: "SNŌ Zipper Cover",
-            supportSystem: "6\" High-Density Foam Core",
-            design: "SNŌ zipper cover with inner-cool PCM layer, 2\" graphite-infused memory foam, 2\" 4 lb memory foam, 2\" Avena soft foam, 6\" high-density foam core, and 1½\" base foam",
-            specs: { height: "12 inches", warranty: "15-Year Warranty" },
-            performance: [
+              "Quantum Edge pocket coil provides premium individually encased edge-to-edge support",
+            ] },
+          { label: "Plush", diagram: "/collections/posture-perfect-ice/hybrid-plush-diagram.png", iconsImage: "/collections/posture-perfect-ice/foam-hd-plush-icons.png", height: "13.5 inches", design: "SNŌ zipper cover with inner-cool PCM layer, 2\" graphite-infused memory foam, 2\" 4 lb memory foam, 8\" Quantum Edge pocket coil, and 1½\" base foam", performance: [
               "SNŌ cool-to-the-touch cover with advanced PE cooling fibers",
               "Inner-cool phase change material regulates temperature throughout the night",
-              "Graphite-infused memory foam helps dissipate heat while providing pressure relief",
-              "Avena foam provides a buoyant, responsive feel with reduced sink",
-            ],
-            iconsImage: "/collections/posture-perfect-ice/foam-hd-plush-icons.png",
-          } },
+              "Graphite-infused memory foam dissipates heat for a cooler, more durable sleep",
+              "Quantum Edge pocket coil provides premium individually encased edge-to-edge support",
+            ] },
         ],
-      },
+      } },
     ],
   },
 ];
