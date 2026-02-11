@@ -126,7 +126,7 @@ export default function Header() {
             Partner with Us
           </a>
 
-          <a href="#contact" className={linkClass}>
+          <a href="/contact" className={linkClass}>
             Contact
           </a>
         </nav>
@@ -227,7 +227,7 @@ export default function Header() {
           </a>
 
           <a
-            href="#contact"
+            href="/contact"
             onClick={() => setMenuOpen(false)}
             className={linkClass}
           >
