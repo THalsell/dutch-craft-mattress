@@ -64,7 +64,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
         <div className="flex justify-center md:justify-end px-4 md:px-0">
           <div className={`relative ${collection.heroImage ? 'bg-black/50 backdrop-blur-sm rounded-lg md:rounded-r-none md:rounded-l-lg p-4 md:p-6 lg:p-8 xl:p-10 2xl:p-12' : ''} max-w-xs md:max-w-sm lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl text-center md:text-right`}>
             <h1 className={`text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-white ${collection.heroImage ? '' : 'mb-2 md:mb-3'}`}>{collection.name}</h1>
-            {!collection.heroImage && (
+            {!collection.heroImage && !collection.comingSoon && (
               <>
                 <p className="text-white/80 text-sm md:text-base mb-2 md:mb-3">{collection.description}</p>
                 <p className="text-white/70 text-xs">{collection.features}</p>
@@ -78,7 +78,12 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-charcoal text-center mb-12">Models</h2>
-          {collection.subCollections ? (
+          {collection.comingSoon ? (
+            <div className="text-center py-16">
+              <p className="text-2xl font-semibold text-charcoal mb-3">Coming Soon</p>
+              <p className="text-slate">New models for the {collection.name} collection are on the way. Check back soon for details.</p>
+            </div>
+          ) : collection.subCollections ? (
             collection.subCollections.map((sub) => (
               <div key={sub.name} className="mb-16 last:mb-0">
                 <h3 className="text-2xl font-semibold text-charcoal mb-8">{sub.name}</h3>

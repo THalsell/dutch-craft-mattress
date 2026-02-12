@@ -69,6 +69,7 @@ export interface Collection {
   heroColor?: string;
   heroImage?: string;
   modelBoxColor?: string;
+  comingSoon?: boolean;
   models?: Model[];
   subCollections?: SubCollection[];
 }
@@ -571,52 +572,8 @@ export const collections: Collection[] = [
     features: "Exclusive 504 coil system with foam encased edge support.",
     image: "/collections/posture-perfect/posture-perfect-card.png",
     heroColor: "#a3d1e6",
-    models: [
-      { name: "Pearl", details: "Available in Pillow Top, Plush, and Firm.", modelDetails: {
-        subtitle: "Pillow Top",
-        alsoAvailable: "Plush and Firm Models Available",
-        comfortLevel: "Pillow Top",
-        coverFabric: "Quilted to 1½\" Comfort Foam",
-        supportSystem: "800 Continuous Coil System with Dual Edge Support",
-        design: "Quilted 1½\" comfort foam with 2\" HD comfort foam, 1\" support foam, breathable cotton insulator pad, and 800 continuous coil system with dual edge support",
-        specs: { warranty: "10-Year Warranty" },
-        performance: [
-          "Plush comfort for a gentle, inviting feel",
-          "Edge-to-edge stability",
-          "Durable bar-tacked handles for easy positioning",
-          "CertiPUR-US® certified foams",
-        ],
-      } },
-      { name: "Sapphire", details: "Available in Pillow Top and Firm.", modelDetails: {
-        subtitle: "Firm",
-        alsoAvailable: "Pillow Top Model Available",
-        comfortLevel: "Firm",
-        coverFabric: "Quilted to 2\" Comfort Foam",
-        supportSystem: "800 Continuous Coil System with Dual Edge Support",
-        design: "Quilted 2\" comfort foam with 1\" graphite-infused memory foam, 2\" HD comfort foam, 1\" support foam, breathable cotton insulator pad, and 800 continuous coil system with dual edge support",
-        specs: { warranty: "10-Year Warranty" },
-        performance: [
-          "Cooling comfort for temperature regulation",
-          "Firm, stable support with minimal sink",
-          "Durable bar-tacked handles for easy positioning",
-          "CertiPUR-US® certified foams",
-        ],
-      } },
-      { name: "Diamond", details: "Available in Pillow Top.", modelDetails: {
-        subtitle: "Pillow Top",
-        comfortLevel: "Pillow Top",
-        coverFabric: "Quilted to 2\" Comfort Foam",
-        supportSystem: "800 Continuous Coil System with Dual Edge Support",
-        design: "Quilted 2\" comfort foam with 2\" Avena foam, 2\" HD comfort foam, 1\" support foam, breathable cotton insulator pad, and 800 continuous coil system with dual edge support",
-        specs: { warranty: "10-Year Warranty" },
-        performance: [
-          "Cooling fabric for temperature regulation",
-          "Dual edge support for consistent edge-to-edge stability",
-          "Durable bar-tacked handles for easy positioning",
-          "CertiPUR-US® certified foams",
-        ],
-      } },
-    ],
+    comingSoon: true,
+    models: [],
   },
   {
     slug: "posture-perfect-gel",
@@ -694,6 +651,8 @@ export const collections: Collection[] = [
     slug: "posture-perfect-ice",
     name: "Posture Perfect ICE",
     description: "Advanced cooling technology paired with superior posture support.",
+    image: "/collections/posture-perfect-ice/posture-perfect-ice-card.png",
+    heroImage: "/collections/posture-perfect-ice/posture-perfect-ice-card.png",
     modelBoxColor: "#7eb8d0",
     warranty: "15-year non-prorated warranty",
     features: "Bio based foam core with high density gel infused foam and removable zipper covers.",
@@ -815,7 +774,7 @@ export const collections: Collection[] = [
     features: "",
     heroColor: "#3d4356",
     models: [
-      { name: "Endurance", details: "Available in Firm, Plush, and Pillow Top.", modelDetails: {
+      { name: "Endurance", details: "Available in Firm, Plush, and Pillow Top.", image: "/collections/legacy-elite-hd/endurance.png", mattressImage: "/collections/legacy-elite-hd/endurance-firm.png", modelDetails: {
         subtitle: "Firm",
         alsoAvailable: "Plush and Pillow Top Models Available",
         comfortLevel: "Firm / Plush / Pillow Top",
@@ -838,7 +797,7 @@ export const collections: Collection[] = [
           { label: "Pillow Top", diagram: "/collections/legacy-elite-hd/endurance-pt-diagram.png", iconsImage: "/collections/legacy-elite-hd/harmony-hybrid-plush-icon.png" },
         ],
       } },
-      { name: "Courage", details: "Available in Pillow Top.", modelDetails: {
+      { name: "Courage", details: "Available in Pillow Top.", image: "/collections/legacy-elite-hd/courage.png", mattressImage: "/collections/legacy-elite-hd/courage-pt.png", modelDetails: {
         subtitle: "Pillow Top",
         comfortLevel: "Pillow Top",
         supportSystem: "8\" Quantum Foam Encased Support Core",
@@ -854,7 +813,7 @@ export const collections: Collection[] = [
           { label: "Pillow Top", diagram: "/collections/legacy-elite-hd/courage-pt-diagram.png", iconsImage: "/collections/legacy-elite-hd/courage-icons.png" },
         ],
       } },
-      { name: "Paramount", details: "Available in Pillow Top.", modelDetails: {
+      { name: "Paramount", details: "Available in Pillow Top.", image: "/collections/legacy-elite-hd/courage.png", mattressImage: "/collections/legacy-elite-hd/courage-pt.png", modelDetails: {
         subtitle: "Pillow Top",
         comfortLevel: "Pillow Top",
         supportSystem: "8\" Quantum Foam Encased Support Core",
@@ -870,7 +829,7 @@ export const collections: Collection[] = [
           { label: "Pillow Top", diagram: "/collections/legacy-elite-hd/paramount-pt-diagram.png", iconsImage: "/collections/legacy-elite-hd/harmony-hybrid-plush-icon.png" },
         ],
       } },
-      { name: "Harmony Hybrid", details: "Available in Luxury Firm and Plush.", modelDetails: {
+      { name: "Harmony Hybrid", details: "Available in Luxury Firm and Plush.", image: "/collections/legacy-elite-hd/courage.png", mattressImage: "/collections/legacy-elite-hd/courage-pt.png", modelDetails: {
         subtitle: "Luxury Firm",
         alsoAvailable: "Plush Model Available",
         comfortLevel: "Luxury Firm / Plush",

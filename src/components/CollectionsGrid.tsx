@@ -16,6 +16,11 @@ export default function CollectionsGrid() {
               <div className="w-full md:w-1/2">
                 <div className="relative bg-sage/15 rounded-lg aspect-4/3 overflow-hidden">
                   {c.image && <Image src={c.image} alt={c.name} fill className="object-fill" />}
+                  {c.comingSoon && (
+                    <div className="absolute top-4 right-4 bg-sage text-white text-sm font-semibold px-4 py-1.5 rounded-full shadow-md">
+                      Coming Soon
+                    </div>
+                  )}
                 </div>
               </div>
               {/* Text */}

@@ -23,7 +23,7 @@ export default function Hero() {
         {/* Image grid side */}
         <div className="grid grid-cols-3 grid-rows-2">
           <div className="relative h-75">
-            <Image src="/DC.png" alt="Dutch Craft Mattress" fill className="object-cover" priority />
+            <Image src="/home1.jpg" alt="Dutch Craft Mattress" fill className="object-cover" priority />
           </div>
           <div className="relative h-75">
             <Image src="/kid.png" alt="Child sleeping comfortably" fill className="object-cover" />
@@ -38,7 +38,7 @@ export default function Hero() {
             <Image src="/lifestyle.png" alt="Lifestyle" fill className="object-cover" />
           </div>
           <div className="relative h-75">
-            <Image src="/bed.png" alt="Bed" fill className="object-cover" />
+            <Image src="/home.jpg" alt="Bed" fill className="object-cover" />
           </div>
         </div>
       </div>
