@@ -9,7 +9,7 @@ export default function ShopFromHomeCTA() {
           Browse our complete collection online and have your handcrafted mattress delivered directly to your door.
         </p>
         <a
-          href="/shop-from-home"
+          href="https://www.shopdutchcraft.com"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-sage hover:bg-sage-dark text-white font-semibold px-8 py-4 rounded-full transition-colors text-lg"

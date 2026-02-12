@@ -38,7 +38,7 @@ export default function Footer() {
             Browse our complete collection and order directly from our official online store.
           </p>
           <a
-            href="/shop-from-home"
+            href="https://www.shopdutchcraft.com"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-sage hover:bg-sage-dark text-white text-sm font-medium px-4 py-2 rounded transition-colors"

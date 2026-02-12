@@ -112,7 +112,7 @@ export default function Header() {
           </a>
 
           <a
-            href="/shop-from-home"
+            href="https://www.shopdutchcraft.com"
             target="_blank"
             rel="noopener noreferrer"
             className={`${linkClass} inline-flex items-center gap-1`}
@@ -207,7 +207,7 @@ export default function Header() {
           </a>
 
           <a
-            href="/shop-from-home"
+            href="https://www.shopdutchcraft.com"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
