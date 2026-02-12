@@ -8,7 +8,7 @@ export default function Hero() {
         {/* Text side */}
         <div className="flex flex-col justify-center px-10 py-16">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-            Find the mattress that&apos;s best for you
+            Traditionally Built Better
           </h1>
           <p className="text-lg md:text-xl text-white/80 mb-6">
             Quality materials and expert craftsmanship for your best night&apos;s sleep.

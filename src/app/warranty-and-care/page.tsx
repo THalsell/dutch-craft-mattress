@@ -42,7 +42,7 @@ export default function WarrantyAndCarePage() {
               Find a Retailer
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className="inline-block border-2 border-charcoal text-charcoal hover:bg-charcoal hover:text-white font-semibold px-6 py-3 rounded-full transition-colors"
             >
               Contact Us
