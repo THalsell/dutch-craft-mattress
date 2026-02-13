@@ -41,7 +41,7 @@ export default function TrustBadges() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {badges.map((badge) => (
             <div key={badge.label} className="flex flex-col items-center text-center gap-2">
-              <span className="text-sage">{badge.icon}</span>
+              <span className="text-sky-300">{badge.icon}</span>
               <span className="text-sm font-medium text-charcoal">{badge.label}</span>
             </div>
           ))}

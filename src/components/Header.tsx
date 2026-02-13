@@ -22,7 +22,7 @@ const aboutSubLinks = [
   { href: "/warranty-and-care", label: "Warranty & Care" },
 ];
 
-const linkClass = "font-bold text-charcoal hover:text-sage transition-colors";
+const linkClass = "font-bold text-charcoal hover:text-sky-300 transition-colors";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -79,7 +79,7 @@ export default function Header() {
                   <Link
                     key={c.slug}
                     href={`/collections/${c.slug}`}
-                    className="block px-4 py-2 text-sm text-charcoal hover:bg-fog hover:text-sage transition-colors"
+                    className="block px-4 py-2 text-sm text-charcoal hover:bg-fog hover:text-sky-300 transition-colors"
                   >
                     {c.name}
                   </Link>
@@ -99,7 +99,7 @@ export default function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block px-4 py-2 text-sm text-charcoal hover:bg-fog hover:text-sage transition-colors"
+                    className="block px-4 py-2 text-sm text-charcoal hover:bg-fog hover:text-sky-300 transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -160,7 +160,7 @@ export default function Header() {
                     key={c.slug}
                     href={`/collections/${c.slug}`}
                     onClick={() => setMenuOpen(false)}
-                    className="text-sm text-charcoal hover:text-sage transition-colors"
+                    className="text-sm text-charcoal hover:text-sky-300 transition-colors"
                   >
                     {c.name}
                   </Link>
@@ -190,7 +190,7 @@ export default function Header() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className="text-sm text-charcoal hover:text-sage transition-colors"
+                    className="text-sm text-charcoal hover:text-sky-300 transition-colors"
                   >
                     {link.label}
                   </Link>

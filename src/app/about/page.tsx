@@ -19,28 +19,28 @@ export default function AboutPage() {
       <Header />
 
       {/* Hero */}
-      <section className="relative min-h-64 md:min-h-80 lg:min-h-100 flex items-center">
+      <section className="relative h-36 md:h-48 lg:h-60 flex items-center">
         <Image
           src="/about-us.png"
           alt="Dutch Craft Mattress craftsmanship"
           fill
-          className="object-cover"
+          className="object-cover object-top"
           priority
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center py-20">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            About Dutch Craft
+          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-4">
+            Traditionally Built Better
           </h1>
           <p className="text-white/90 leading-relaxed text-lg md:text-xl">
-            Traditionally Built Better
+            A family-owned mattress company built on craftsmanship, integrity, and honest pricing.
           </p>
         </div>
       </section>
 
       {/* Heritage Intro */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-6 text-center">
           <p className="text-2xl md:text-3xl text-charcoal font-light leading-relaxed">
             One of the most trusted names in handcrafted sleep products, Dutch Craft has been
             delivering superior quality mattresses to families across America.
@@ -49,27 +49,29 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story */}
-      <section className="py-16 md:py-20 bg-fog">
+      <section className="py-20 md:py-28 bg-fog">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-charcoal mb-6">Our Story</h2>
-              <p className="text-slate leading-relaxed mb-5">
-                Eli Schmucker, Founder and President of Dutch Craft Sleep Products, grew up in the small town
-                of Middlefield, Ohio—about 30 miles east of Cleveland. Following the Amish tradition, he
-                went to work after graduating from the eighth grade at the local Amish school. After years
-                of carpentry, masonry, and farm work, he entered the mattress industry.
-              </p>
-              <p className="text-slate leading-relaxed mb-5">
-                At twenty-four, Eli moved to Tennessee to start his own factory with one mission: build
-                quality mattresses at honest prices. Since the beginning, Dutch Craft has grown by leaps
-                and bounds.
-              </p>
-              <p className="text-slate leading-relaxed">
-                Today, Dutch Craft ships to dealers across over half the country, with multiple US factories
-                including a foam cutting plant and sewing division—all ensuring the highest quality in
-                every mattress we make.
-              </p>
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-charcoal mb-6">Our Story</h2>
+              <div className="max-w-2xl">
+                <p className="text-base md:text-lg leading-relaxed text-slate mb-5">
+                  Eli Schmucker, Founder and President of Dutch Craft Sleep Products, grew up in the small town
+                  of Middlefield, Ohio—about 30 miles east of Cleveland. Following the Amish tradition, he
+                  went to work after graduating from the eighth grade at the local Amish school. After years
+                  of carpentry, masonry, and farm work, he entered the mattress industry.
+                </p>
+                <p className="text-base md:text-lg leading-relaxed text-slate mb-5">
+                  At twenty-four, Eli moved to Tennessee to start his own factory with one mission: build
+                  quality mattresses at honest prices. Since the beginning, Dutch Craft has grown by leaps
+                  and bounds.
+                </p>
+                <p className="text-base md:text-lg leading-relaxed text-slate">
+                  Today, Dutch Craft ships to dealers across over half the country, with multiple US factories
+                  including a foam cutting plant and sewing division—all ensuring the highest quality in
+                  every mattress we make.
+                </p>
+              </div>
             </div>
             <div className="relative aspect-4/3 rounded-lg overflow-hidden">
               <Image
@@ -85,29 +87,43 @@ export default function AboutPage() {
 
       <ManufacturingExcellence />
 
+      {/* Statement Separator */}
+      <section className="py-12 md:py-16 bg-fog">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <div className="flex items-center gap-6">
+            <div className="flex-1 h-px bg-border" />
+            <p className="text-lg md:text-xl font-medium text-charcoal italic">
+              Complete control over quality at every step of production.
+            </p>
+            <div className="flex-1 h-px bg-border" />
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Dutch Craft */}
-      <section className="py-16 md:py-20 bg-charcoal text-white">
+      <section className="py-20 md:py-28 bg-charcoal text-white">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-4">Why Choose Dutch Craft?</h2>
-          <p className="text-white/70 text-center max-w-2xl mx-auto mb-12">
+          <p className="text-xs md:text-sm uppercase tracking-widest text-sky-300 text-center mb-3">By the Numbers</p>
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-center mb-4">Why Choose Dutch Craft?</h2>
+          <p className="text-white/70 text-center max-w-2xl mx-auto mb-14 text-base md:text-lg leading-relaxed">
             When you choose Dutch Craft, you&apos;re choosing a mattress built with integrity, quality materials, and generations of craftsmanship.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-sage mb-2">100%</div>
-              <p className="text-white/80">American Made</p>
+              <div className="text-4xl md:text-5xl font-bold text-sky-300 mb-2">100%</div>
+              <p className="text-xs uppercase tracking-widest text-white/70">American Made</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-sage mb-2">No</div>
-              <p className="text-white/80">Inferior Foams or Fiber</p>
+              <div className="text-4xl md:text-5xl font-bold text-sky-300 mb-2">No</div>
+              <p className="text-xs uppercase tracking-widest text-white/70">Inferior Foams or Fiber</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-sage mb-2">15 Yr</div>
-              <p className="text-white/80">Warranties Available</p>
+              <div className="text-4xl md:text-5xl font-bold text-sky-300 mb-2">15 Yr</div>
+              <p className="text-xs uppercase tracking-widest text-white/70">Warranties Available</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-sage mb-2">9+</div>
-              <p className="text-white/80">Product Collections</p>
+              <div className="text-4xl md:text-5xl font-bold text-sky-300 mb-2">9+</div>
+              <p className="text-xs uppercase tracking-widest text-white/70">Product Collections</p>
             </div>
           </div>
         </div>

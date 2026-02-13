@@ -11,7 +11,7 @@ interface CTASectionProps {
   heading: string;
   description: string;
   buttons: CTAButton[];
-  theme?: "sage" | "charcoal" | "fog";
+  theme?: "sky-300" | "charcoal" | "fog";
 }
 
 const externalIcon = (
@@ -21,25 +21,25 @@ const externalIcon = (
 );
 
 const themeConfig = {
-  sage: {
-    section: "py-16 md:py-20 bg-sage text-white",
-    heading: "text-3xl font-bold mb-4",
-    description: "text-white/80 mb-8",
-    primary: "inline-block bg-white hover:bg-fog text-sage font-semibold px-8 py-4 rounded-full transition-colors",
-    outline: "inline-block border-2 border-white text-white hover:bg-white hover:text-sage font-semibold px-6 py-3 rounded-full transition-colors",
+  "sky-300": {
+    section: "py-20 md:py-28 bg-charcoal text-white",
+    heading: "text-2xl md:text-3xl font-semibold tracking-tight mb-4",
+    description: "text-white/70 mb-10 text-base md:text-lg leading-relaxed",
+    primary: "inline-block bg-sky-300 hover:bg-sky-400 text-white font-semibold px-8 py-4 rounded-full transition-colors",
+    outline: "inline-block border-2 border-white text-white hover:bg-white hover:text-charcoal font-semibold px-6 py-3 rounded-full transition-colors",
   },
   charcoal: {
-    section: "py-16 md:py-20 bg-charcoal text-white",
-    heading: "text-3xl md:text-4xl font-bold mb-4",
-    description: "text-white/80 mb-8 text-lg",
-    primary: "inline-flex items-center gap-2 bg-sage hover:bg-sage-dark text-white font-semibold px-8 py-4 rounded-full transition-colors text-lg",
+    section: "py-20 md:py-28 bg-charcoal text-white",
+    heading: "text-2xl md:text-3xl font-semibold tracking-tight mb-4",
+    description: "text-white/80 mb-10 text-base md:text-lg leading-relaxed",
+    primary: "inline-flex items-center gap-2 bg-sky-300 hover:bg-navy-700 text-white font-semibold px-8 py-4 rounded-full transition-colors text-lg",
     outline: "inline-block border-2 border-white text-white hover:bg-white hover:text-charcoal font-semibold px-6 py-3 rounded-full transition-colors",
   },
   fog: {
-    section: "py-16 md:py-20 bg-fog",
-    heading: "text-2xl font-bold text-charcoal mb-4",
-    description: "text-slate mb-8",
-    primary: "inline-block bg-sage hover:bg-sage-dark text-white font-semibold px-6 py-3 rounded-full transition-colors",
+    section: "py-20 md:py-28 bg-fog",
+    heading: "text-2xl md:text-3xl font-semibold tracking-tight text-charcoal mb-4",
+    description: "text-slate mb-10 text-base md:text-lg leading-relaxed",
+    primary: "inline-block bg-sky-300 hover:bg-navy-700 text-white font-semibold px-6 py-3 rounded-full transition-colors",
     outline: "inline-block border-2 border-charcoal text-charcoal hover:bg-charcoal hover:text-white font-semibold px-6 py-3 rounded-full transition-colors",
   },
 } as const;

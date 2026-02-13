@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="bg-sage">
+    <section className="bg-sky-300">
       <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr]">
         {/* Text side */}
         <div className="flex flex-col justify-center px-10 py-16">
@@ -15,7 +15,7 @@ export default function Hero() {
           </p>
           <Link
             href="/collections"
-            className="inline-block self-start bg-white text-sage font-semibold px-6 py-3 rounded-full hover:bg-fog transition-colors text-sm"
+            className="inline-block self-start bg-white text-sky-300 font-semibold px-6 py-3 rounded-full hover:bg-fog transition-colors text-sm"
           >
             View Collections
           </Link>

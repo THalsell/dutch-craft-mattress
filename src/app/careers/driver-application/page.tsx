@@ -498,7 +498,7 @@ export default function DriverApplicationPage() {
         <button
           type="button"
           onClick={() => setAccidents([...accidents, { date: "", nature: "", location: "" }])}
-          className="text-sm text-sage hover:text-sage/80 font-medium"
+          className="text-sm text-sky-300 hover:text-sky-300/80 font-medium"
         >
           + Add another accident record
         </button>
@@ -530,7 +530,7 @@ export default function DriverApplicationPage() {
         <button
           type="button"
           onClick={() => setConvictions([...convictions, { date: "", location: "", charge: "", penalty: "" }])}
-          className="text-sm text-sage hover:text-sage/80 font-medium"
+          className="text-sm text-sky-300 hover:text-sky-300/80 font-medium"
         >
           + Add another conviction
         </button>

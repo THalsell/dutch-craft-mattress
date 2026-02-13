@@ -55,7 +55,7 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
 
       {/* Hero */}
       <section
-        className={`relative bg-sage bg-cover bg-center ${model.image ? 'py-20 md:py-40 lg:py-56' : 'py-16'}`}
+        className={`relative bg-sky-300 bg-cover bg-center ${model.image ? 'py-20 md:py-40 lg:py-56' : 'py-16'}`}
         style={{
           ...(collection.heroColor ? { backgroundColor: collection.heroColor } : {}),
           ...(model.image ? { backgroundImage: `url(${model.image})` } : {}),
@@ -219,7 +219,7 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
 
           <Link
             href={`/collections/${collection.slug}`}
-            className="inline-flex items-center text-sage hover:text-sage/80 font-medium mt-12"
+            className="inline-flex items-center text-sky-300 hover:text-sky-300/80 font-medium mt-12"
           >
             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />

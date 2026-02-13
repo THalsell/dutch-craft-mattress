@@ -6,19 +6,17 @@ export default function BuiltForLongevity() {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-fog">
+    <section className="py-20 md:py-28 bg-charcoal text-white">
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold text-charcoal mb-6">Built for Longevity</h2>
-        <p className="text-slate mb-8 max-w-2xl mx-auto">
-          We don&apos;t build mattresses to be replaced in a few years. We build them to
-          provide lasting comfort—because a good mattress should be an investment, not
-          a recurring expense.
+        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">Built for Longevity</h2>
+        <p className="text-base md:text-lg leading-relaxed text-white/60 mb-16 max-w-xl mx-auto">
+          A good mattress should be an investment, not a recurring expense.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
           {stats.map((stat) => (
-            <div key={stat.label} className="bg-white rounded-lg p-6">
-              <div className="text-3xl font-bold text-sage mb-2">{stat.value}</div>
-              <p className="text-slate text-sm">{stat.label}</p>
+            <div key={stat.label} className="bg-white/10 rounded-lg p-10">
+              <div className="text-5xl md:text-6xl font-bold text-sky-300 mb-4">{stat.value}</div>
+              <p className="text-xs uppercase tracking-widest text-white/60">{stat.label}</p>
             </div>
           ))}
         </div>

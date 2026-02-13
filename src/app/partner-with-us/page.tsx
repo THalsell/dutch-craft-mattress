@@ -13,7 +13,7 @@ export default function PartnerWithUsPage() {
     email: "",
     phone: "",
     location: "",
-    message: "",
+    messky: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
@@ -41,10 +41,10 @@ export default function PartnerWithUsPage() {
             ${row("Phone", form.phone)}
             ${row("Location", form.location)}
           </table>
-          ${form.message ? `
+          ${form.messky ? `
             <div style="margin-top:20px">
-              <h2 style="font-size:16px;color:#4a7c59;border-bottom:2px solid #4a7c59;padding-bottom:6px;margin-bottom:12px">Message</h2>
-              <p style="font-size:14px;color:#222;white-space:pre-wrap">${form.message}</p>
+              <h2 style="font-size:16px;color:#4a7c59;border-bottom:2px solid #4a7c59;padding-bottom:6px;margin-bottom:12px">Messky</h2>
+              <p style="font-size:14px;color:#222;white-space:pre-wrap">${form.messky}</p>
             </div>
           ` : ""}
         </div>
@@ -76,7 +76,7 @@ export default function PartnerWithUsPage() {
             <p className="text-slate mb-6">
               Thank you, {form.name}. Our team will review your inquiry and be in touch soon.
             </p>
-            <Link href="/" className="inline-block bg-sage text-white py-3 px-6 rounded-lg font-medium hover:bg-sage/90 transition-colors">
+            <Link href="/" className="inline-block bg-sky-300 text-white py-3 px-6 rounded-lg font-medium hover:bg-sky-300/90 transition-colors">
               Back to Home
             </Link>
           </div>
@@ -91,7 +91,7 @@ export default function PartnerWithUsPage() {
       <Header />
 
       {/* Hero */}
-      <section className="bg-sage py-16">
+      <section className="bg-sky-300 py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Partner With Us</h1>
           <p className="text-white/80 text-lg">
@@ -121,7 +121,7 @@ export default function PartnerWithUsPage() {
                   required
                   value={form.name}
                   onChange={handleChange}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-charcoal focus:outline-none focus:ring-2 focus:ring-sage"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-charcoal focus:outline-none focus:ring-2 focus:ring-sky-300"
                 />
               </div>
               <div>
@@ -133,7 +133,7 @@ export default function PartnerWithUsPage() {
                   required
                   value={form.company}
                   onChange={handleChange}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-charcoal focus:outline-none focus:ring-2 focus:ring-sage"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-charcoal focus:outline-none focus:ring-2 focus:ring-sky-300"
                 />
               </div>
             </div>
@@ -148,7 +148,7 @@ export default function PartnerWithUsPage() {
                   required
                   value={form.email}
                   onChange={handleChange}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-charcoal focus:outline-none focus:ring-2 focus:ring-sage"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-charcoal focus:outline-none focus:ring-2 focus:ring-sky-300"
                 />
               </div>
               <div>
@@ -159,7 +159,7 @@ export default function PartnerWithUsPage() {
                   name="phone"
                   value={form.phone}
                   onChange={handleChange}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-charcoal focus:outline-none focus:ring-2 focus:ring-sage"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-charcoal focus:outline-none focus:ring-2 focus:ring-sky-300"
                 />
               </div>
             </div>
@@ -172,19 +172,19 @@ export default function PartnerWithUsPage() {
                 name="location"
                 value={form.location}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 text-charcoal focus:outline-none focus:ring-2 focus:ring-sage"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 text-charcoal focus:outline-none focus:ring-2 focus:ring-sky-300"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-charcoal mb-1">Message</label>
+              <label htmlFor="messky" className="block text-sm font-medium text-charcoal mb-1">Messky</label>
               <textarea
-                id="message"
-                name="message"
+                id="messky"
+                name="messky"
                 rows={5}
-                value={form.message}
+                value={form.messky}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 text-charcoal focus:outline-none focus:ring-2 focus:ring-sage"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 text-charcoal focus:outline-none focus:ring-2 focus:ring-sky-300"
                 placeholder="Tell us about your business and why you'd like to partner with Dutch Craft..."
               />
             </div>
@@ -192,7 +192,7 @@ export default function PartnerWithUsPage() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full bg-sage text-white py-3 px-6 rounded-lg font-medium hover:bg-sage/90 transition-colors disabled:opacity-50"
+              className="w-full bg-sky-300 text-white py-3 px-6 rounded-lg font-medium hover:bg-sky-300/90 transition-colors disabled:opacity-50"
             >
               {status === "sending" ? "Submitting..." : "Submit Inquiry"}
             </button>

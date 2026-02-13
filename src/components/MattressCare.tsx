@@ -26,9 +26,9 @@ export default function MattressCare() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-sage/10 border border-sage/30 rounded-lg p-6">
+          <div className="bg-sky-300/10 border border-sky-300/30 rounded-lg p-6">
             <h3 className="text-xl font-semibold text-charcoal mb-4 flex items-center gap-2">
-              <svg className="w-6 h-6 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
               Do&apos;s
@@ -36,7 +36,7 @@ export default function MattressCare() {
             <ul className="space-y-3 text-slate text-sm">
               {dos.map((item) => (
                 <li key={item.title} className="flex gap-3">
-                  <span className="text-sage">•</span>
+                  <span className="text-sky-300">•</span>
                   <span><strong>{item.title}</strong> — {item.desc}</span>
                 </li>
               ))}

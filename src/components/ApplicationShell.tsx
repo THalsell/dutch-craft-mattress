@@ -37,7 +37,7 @@ export default function ApplicationShell({
             <p className="text-slate mb-6">
               Thank you for applying, {firstName}. Your application has been sent to our HR team and we will be in touch.
             </p>
-            <Link href="/careers" className="inline-block bg-sage text-white py-3 px-6 rounded-lg font-medium hover:bg-sage/90 transition-colors">
+            <Link href="/careers" className="inline-block bg-sky-300 text-white py-3 px-6 rounded-lg font-medium hover:bg-sky-300/90 transition-colors">
               Back to Careers
             </Link>
           </div>
@@ -51,7 +51,7 @@ export default function ApplicationShell({
     <div className="min-h-screen">
       <Header />
 
-      <section className="bg-sage py-16">
+      <section className="bg-sky-300 py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{title}</h1>
           <p className="text-white/80 text-lg">
@@ -86,7 +86,7 @@ export default function ApplicationShell({
                   type="checkbox"
                   checked={certified}
                   onChange={(e) => setCertified(e.target.checked)}
-                  className="mt-1 accent-sage w-4 h-4"
+                  className="mt-1 accent-sky-300 w-4 h-4"
                   required
                 />
                 <span className="text-sm text-charcoal">I certify the above information is true and complete. *</span>
@@ -96,14 +96,14 @@ export default function ApplicationShell({
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full bg-sage text-white py-3 px-6 rounded-lg font-medium hover:bg-sage/90 transition-colors disabled:opacity-50"
+              className="w-full bg-sky-300 text-white py-3 px-6 rounded-lg font-medium hover:bg-sky-300/90 transition-colors disabled:opacity-50"
             >
               {status === "sending" ? "Submitting..." : "Submit Application"}
             </button>
 
             <p className="text-xs text-slate text-center mt-4">
               You can also{" "}
-              <a href={pdfHref} target="_blank" className="text-sage hover:text-sage/80 underline">
+              <a href={pdfHref} target="_blank" className="text-sky-300 hover:text-sky-300/80 underline">
                 download the printable PDF
               </a>{" "}
               and email it to {contact.applicationsEmail}.

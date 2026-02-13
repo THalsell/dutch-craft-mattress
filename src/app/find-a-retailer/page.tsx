@@ -76,7 +76,7 @@ export default function FindRetailerPage() {
       <Header />
 
       {/* Hero */}
-      <section className="bg-sage py-16">
+      <section className="bg-sky-300 py-16">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Find a Retailer</h1>
           <p className="text-white/80 text-lg">
@@ -95,12 +95,12 @@ export default function FindRetailerPage() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               maxLength={5}
-              className="flex-1 border border-border rounded-full px-6 py-4 text-charcoal placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-sage"
+              className="flex-1 border border-border rounded-full px-6 py-4 text-charcoal placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-sky-300"
             />
             <button
               type="submit"
               disabled={loading}
-              className="bg-sage text-white font-semibold px-8 py-4 rounded-full hover:bg-sage-dark transition-colors disabled:opacity-50"
+              className="bg-sky-300 text-white font-semibold px-8 py-4 rounded-full hover:bg-navy-700 transition-colors disabled:opacity-50"
             >
               {loading ? "Searching..." : "Search"}
             </button>
@@ -136,7 +136,7 @@ export default function FindRetailerPage() {
                     {[r.dealer.address, r.dealer.city, r.dealer.state, r.dealer.zip].filter(Boolean).join(", ")}
                   </p>
                   {r.dealer.phone && (
-                    <a href={`tel:${r.dealer.phone}`} className="text-sage hover:text-sage-dark text-sm font-medium mt-2 inline-block">
+                    <a href={`tel:${r.dealer.phone}`} className="text-sky-300 hover:text-navy-700 text-sm font-medium mt-2 inline-block">
                       {r.dealer.phone}
                     </a>
                   )}

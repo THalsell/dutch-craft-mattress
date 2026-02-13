@@ -34,7 +34,7 @@ export default function WarrantyTable() {
                   <td className="py-4 px-6 text-charcoal border-b border-border">{warranty.name}</td>
                   <td className="py-4 px-6 text-slate border-b border-border">{warranty.duration}</td>
                   <td className="py-4 px-6 border-b border-border">
-                    <span className="inline-block bg-sage/15 text-sage text-sm px-3 py-1 rounded-full">
+                    <span className="inline-block bg-sky-300/15 text-sky-300 text-sm px-3 py-1 rounded-full">
                       {warranty.type}
                     </span>
                   </td>

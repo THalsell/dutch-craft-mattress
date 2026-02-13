@@ -22,7 +22,7 @@ function ModelGrid({ models, collectionSlug }: { models: Model[]; collectionSlug
             backgroundPosition: 'center',
           } : undefined}
         >
-          {!model.image && <div className="absolute inset-0 bg-sage/20" />}
+          {!model.image && <div className="absolute inset-0 bg-sky-300/20" />}
           <div className="absolute inset-0 bg-linear-to-t from-charcoal/80 via-charcoal/20 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
             <h3 className="text-lg font-semibold mb-2">{model.name}</h3>
@@ -66,7 +66,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
 
       {/* Hero */}
       <section
-        className={`relative bg-sage bg-cover bg-center ${collection.heroImage ? 'py-20 md:py-40 lg:py-56' : 'py-16'}`}
+        className={`relative bg-sky-300 bg-cover bg-center ${collection.heroImage ? 'py-20 md:py-40 lg:py-56' : 'py-16'}`}
         style={{
           ...(collection.heroColor ? { backgroundColor: collection.heroColor } : {}),
           ...(collection.heroImage ? { backgroundImage: `url(${collection.heroImage})` } : {}),

@@ -15,7 +15,7 @@ export default function CareersPage() {
       <Header />
 
       {/* Hero */}
-      <section className="bg-sage py-16">
+      <section className="bg-sky-300 py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Searching for a New Job?</h1>
           <p className="text-white/80 text-lg">
@@ -41,7 +41,7 @@ export default function CareersPage() {
             <h2 className="text-2xl font-bold text-charcoal mb-4">How to Apply</h2>
             <p className="text-slate mb-6">
               Fill out one of the applications below online, or download a printable version and email it to{" "}
-              <a href={`mailto:${contact.applicationsEmail}`} className="text-sage font-medium hover:text-sage/80 transition-colors">
+              <a href={`mailto:${contact.applicationsEmail}`} className="text-sky-300 font-medium hover:text-sky-300/80 transition-colors">
                 {contact.applicationsEmail}
               </a>.
             </p>
@@ -59,7 +59,7 @@ export default function CareersPage() {
               <div className="flex-1 text-center">
                 <Link
                   href="/careers/driver-application"
-                  className="block bg-sage text-white py-3 px-6 rounded-lg font-medium hover:bg-sage/90 transition-colors"
+                  className="block bg-sky-300 text-white py-3 px-6 rounded-lg font-medium hover:bg-sky-300/90 transition-colors"
                 >
                   Driver Application
                   <span className="block text-sm text-white/70 mt-1">Class A Required</span>
@@ -67,7 +67,7 @@ export default function CareersPage() {
                 <a
                   href="/careers/driver-application.pdf"
                   target="_blank"
-                  className="inline-block text-sm text-sage hover:text-sage/80 mt-2 underline"
+                  className="inline-block text-sm text-sky-300 hover:text-sky-300/80 mt-2 underline"
                 >
                   Download printable version (PDF)
                 </a>
@@ -75,14 +75,14 @@ export default function CareersPage() {
               <div className="flex-1 text-center">
                 <Link
                   href="/careers/factory-application"
-                  className="block bg-sage text-white py-3 px-6 rounded-lg font-medium hover:bg-sage/90 transition-colors"
+                  className="block bg-sky-300 text-white py-3 px-6 rounded-lg font-medium hover:bg-sky-300/90 transition-colors"
                 >
                   Factory Application
                 </Link>
                 <a
                   href="/careers/factory-application.pdf"
                   target="_blank"
-                  className="inline-block text-sm text-sage hover:text-sage/80 mt-2 underline"
+                  className="inline-block text-sm text-sky-300 hover:text-sky-300/80 mt-2 underline"
                 >
                   Download printable version (PDF)
                 </a>

@@ -18,25 +18,56 @@ export default function WhyWereDifferentPage() {
       <Header />
 
       {/* Hero */}
-      <section className="bg-fog py-16 md:py-20">
+      <section className="bg-charcoal py-20 md:py-28">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
             Why We&apos;re Different
           </h1>
-          <p className="text-slate text-lg max-w-2xl mx-auto">
-            Not all mattresses are created equal. Here&apos;s what sets Dutch Craft apart from
-            national brands and big-box retailers.
+          <p className="text-xl md:text-2xl leading-relaxed text-white/70 max-w-2xl mx-auto">
+            Most mattresses today are built to be replaced.<br />
+            Ours are built to last.
+          </p>
+        </div>
+      </section>
+
+      {/* Statement Break #1 */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-2xl md:text-3xl font-semibold tracking-tight text-charcoal leading-snug">
+            We don&apos;t build mattresses to hit quotas.<br />
+            We build them to be slept on for decades.
           </p>
         </div>
       </section>
 
       <HandcraftedVsMassProduced />
+
+      {/* Statement Break #2 */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-2xl md:text-3xl font-semibold tracking-tight text-charcoal leading-snug">
+            We don&apos;t pay for celebrity endorsements.<br />
+            We pay for better foam, coils, and fabrics.
+          </p>
+        </div>
+      </section>
+
       <NoAdvertising />
       <FamilyVsCorporate />
+
+      {/* Statement Break #3 */}
+      <section className="py-16 md:py-20 bg-fog">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-2xl md:text-3xl font-semibold tracking-tight text-charcoal leading-snug">
+            A good mattress shouldn&apos;t be disposable.
+          </p>
+        </div>
+      </section>
+
       <BuiltForLongevity />
 
       <CTASection
-        theme="sage"
+        theme="charcoal"
         heading="Experience the Difference"
         description="Visit an authorized retailer to feel the Dutch Craft difference for yourself."
         buttons={[{ label: "Find a Retailer Near You", href: "/find-a-retailer" }]}

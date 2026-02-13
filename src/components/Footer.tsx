@@ -44,7 +44,7 @@ export default function Footer() {
             href={contact.shopUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-sage hover:bg-sage-dark text-white text-sm font-medium px-4 py-2 rounded transition-colors"
+            className="inline-flex items-center gap-2 bg-sky-300 hover:bg-navy-700 text-white text-sm font-medium px-4 py-2 rounded transition-colors"
           >
             Shop From Home
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

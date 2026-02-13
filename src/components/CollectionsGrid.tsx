@@ -14,10 +14,10 @@ export default function CollectionsGrid() {
             >
               {/* Image */}
               <div className="w-full md:w-1/2">
-                <div className="relative bg-sage/15 rounded-lg aspect-4/3 overflow-hidden">
+                <div className="relative bg-sky-300/15 rounded-lg aspect-4/3 overflow-hidden">
                   {c.image && <Image src={c.image} alt={c.name} fill className="object-fill" />}
                   {c.comingSoon && (
-                    <div className="absolute top-4 right-4 bg-sage text-white text-sm font-semibold px-4 py-1.5 rounded-full shadow-md">
+                    <div className="absolute top-4 right-4 bg-sky-300 text-white text-sm font-semibold px-4 py-1.5 rounded-full shadow-md">
                       Coming Soon
                     </div>
                   )}
@@ -31,7 +31,7 @@ export default function CollectionsGrid() {
                 <p className="text-sm text-muted mb-6">{c.warranty}</p>
                 <a
                   href={`/collections/${c.slug}`}
-                  className="inline-block bg-sage text-white font-semibold px-6 py-3 rounded-full hover:bg-sage-dark transition-colors text-sm"
+                  className="inline-block bg-sky-300 text-white font-semibold px-6 py-3 rounded-full hover:bg-navy-700 transition-colors text-sm"
                 >
                   View All Models &rarr;
                 </a>

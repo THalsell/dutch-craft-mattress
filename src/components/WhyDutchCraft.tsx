@@ -51,7 +51,7 @@ export default function WhyDutchCraft() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {benefits.map((benefit) => (
             <div key={benefit.title} className="text-center">
-              <div className="w-16 h-16 bg-sage/15 rounded-full flex items-center justify-center mx-auto mb-4 text-sage">
+              <div className="w-16 h-16 bg-sky-300/15 rounded-full flex items-center justify-center mx-auto mb-4 text-sky-300">
                 {benefit.icon}
               </div>
               <h3 className="font-semibold text-charcoal mb-2 text-sm md:text-base">{benefit.title}</h3>

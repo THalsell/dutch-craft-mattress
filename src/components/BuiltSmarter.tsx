@@ -31,7 +31,7 @@ export default function BuiltSmarter() {
             <div className="space-y-6">
               {points.map((point) => (
                 <div key={point.title} className="flex gap-4">
-                  <div className="shrink-0 w-6 h-6 bg-sage rounded-full flex items-center justify-center mt-0.5">
+                  <div className="shrink-0 w-6 h-6 bg-sky-300 rounded-full flex items-center justify-center mt-0.5">
                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
@@ -51,19 +51,19 @@ export default function BuiltSmarter() {
                 <div>
                   <div className="flex justify-between text-sm mb-1">
                     <span className="text-slate">Quality Materials</span>
-                    <span className="font-semibold text-sage">Maximum</span>
+                    <span className="font-semibold text-sky-300">Maximum</span>
                   </div>
-                  <div className="h-3 bg-sage/20 rounded-full overflow-hidden">
-                    <div className="h-full bg-sage rounded-full" style={{ width: "85%" }}></div>
+                  <div className="h-3 bg-sky-300/20 rounded-full overflow-hidden">
+                    <div className="h-full bg-sky-300 rounded-full" style={{ width: "85%" }}></div>
                   </div>
                 </div>
                 <div>
                   <div className="flex justify-between text-sm mb-1">
                     <span className="text-slate">Skilled Craftsmanship</span>
-                    <span className="font-semibold text-sage">High</span>
+                    <span className="font-semibold text-sky-300">High</span>
                   </div>
-                  <div className="h-3 bg-sage/20 rounded-full overflow-hidden">
-                    <div className="h-full bg-sage rounded-full" style={{ width: "70%" }}></div>
+                  <div className="h-3 bg-sky-300/20 rounded-full overflow-hidden">
+                    <div className="h-full bg-sky-300 rounded-full" style={{ width: "70%" }}></div>
                   </div>
                 </div>
                 <div>

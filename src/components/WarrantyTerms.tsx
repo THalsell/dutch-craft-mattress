@@ -34,7 +34,7 @@ export default function WarrantyTerms() {
             <ul className="space-y-3 text-slate text-sm">
               {covered.map((item) => (
                 <li key={item} className="flex gap-3">
-                  <svg className="w-5 h-5 text-sage shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-sky-300 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span>{item}</span>
@@ -63,7 +63,7 @@ export default function WarrantyTerms() {
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate text-sm">
             {requirements.map((item, index) => (
               <li key={item} className="flex gap-3">
-                <span className="text-sage font-bold">{index + 1}.</span>
+                <span className="text-sky-300 font-bold">{index + 1}.</span>
                 <span>{item}</span>
               </li>
             ))}
