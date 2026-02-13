@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
+import { contact } from "@/src/data/contact";
 
 export default function PartnerWithUsPage() {
   const [form, setForm] = useState({
@@ -74,9 +76,9 @@ export default function PartnerWithUsPage() {
             <p className="text-slate mb-6">
               Thank you, {form.name}. Our team will review your inquiry and be in touch soon.
             </p>
-            <a href="/" className="inline-block bg-sage text-white py-3 px-6 rounded-lg font-medium hover:bg-sage/90 transition-colors">
+            <Link href="/" className="inline-block bg-sage text-white py-3 px-6 rounded-lg font-medium hover:bg-sage/90 transition-colors">
               Back to Home
-            </a>
+            </Link>
           </div>
         </section>
         <Footer />
@@ -104,7 +106,7 @@ export default function PartnerWithUsPage() {
 
           {status === "error" && (
             <div className="bg-red-50 border border-red-300 rounded-lg p-4 mb-8 text-center">
-              <p className="text-red-700">Something went wrong. Please try again or email us directly at eli@twlakes.net.</p>
+              <p className="text-red-700">Something went wrong. Please try again or email us directly at {contact.ownerEmail}.</p>
             </div>
           )}
 

@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
+import CTASection from "@/src/components/CTASection";
 import WarrantyTable from "@/src/components/WarrantyTable";
 import WarrantyTerms from "@/src/components/WarrantyTerms";
 import MattressCare from "@/src/components/MattressCare";
+
+export const metadata: Metadata = {
+  title: "Warranty & Care | Dutch Craft Mattress",
+  description: "Learn about Dutch Craft Mattress warranty coverage and care instructions to keep your handcrafted mattress in top condition.",
+};
 
 export default function WarrantyAndCarePage() {
   return (
@@ -26,30 +33,15 @@ export default function WarrantyAndCarePage() {
       <WarrantyTerms />
       <MattressCare />
 
-      {/* Contact for Questions */}
-      <section className="py-16 md:py-20 bg-fog">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-2xl font-bold text-charcoal mb-4">Have Questions?</h2>
-          <p className="text-slate mb-8">
-            Contact your authorized Dutch Craft retailer or reach out to us directly for
-            warranty inquiries or care questions.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/find-a-retailer"
-              className="inline-block bg-sage hover:bg-sage-dark text-white font-semibold px-6 py-3 rounded-full transition-colors"
-            >
-              Find a Retailer
-            </a>
-            <a
-              href="/contact"
-              className="inline-block border-2 border-charcoal text-charcoal hover:bg-charcoal hover:text-white font-semibold px-6 py-3 rounded-full transition-colors"
-            >
-              Contact Us
-            </a>
-          </div>
-        </div>
-      </section>
+      <CTASection
+        theme="fog"
+        heading="Have Questions?"
+        description="Contact your authorized Dutch Craft retailer or reach out to us directly for warranty inquiries or care questions."
+        buttons={[
+          { label: "Find a Retailer", href: "/find-a-retailer" },
+          { label: "Contact Us", href: "/contact", variant: "outline" },
+        ]}
+      />
 
       <Footer />
     </div>

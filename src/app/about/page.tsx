@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
 import ManufacturingExcellence from "@/src/components/ManufacturingExcellence";
@@ -6,6 +7,11 @@ import OurValues from "@/src/components/OurValues";
 import FeaturedCollections from "@/src/components/FeaturedCollections";
 import DutchCraftPromise from "@/src/components/DutchCraftPromise";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "About Us | Dutch Craft Mattress",
+  description: "Learn about Dutch Craft Mattress — our story, our values, and our commitment to handcrafted quality mattresses made in America.",
+};
 
 export default function AboutPage() {
   return (

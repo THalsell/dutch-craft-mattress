@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Header from "@/src/components/Header";
@@ -14,6 +15,18 @@ function getAllModels(collection: Collection): Model[] {
     return collection.subCollections.flatMap(sc => sc.models);
   }
   return collection.models ?? [];
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string; model: string }> }): Promise<Metadata> {
+  const { slug, model: modelSlug } = await params;
+  const collection = collections.find((c) => c.slug === slug);
+  if (!collection) return {};
+  const model = getAllModels(collection).find((m) => slugify(m.name) === modelSlug);
+  if (!model) return {};
+  return {
+    title: `${model.name} — ${collection.name} | Dutch Craft Mattress`,
+    description: model.details,
+  };
 }
 
 export function generateStaticParams() {

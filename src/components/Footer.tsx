@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { contact } from "@/src/data/contact";
+
 const navLinks = [
   { href: "/collections", label: "Collections" },
   { href: "/about", label: "About Us" },
@@ -18,7 +21,7 @@ function LinkList({ title, links }: { title: string; links: { href: string; labe
       <ul className="space-y-2 text-sm text-white/70">
         {links.map((link) => (
           <li key={link.label}>
-            <a href={link.href} className="hover:text-white transition-colors">{link.label}</a>
+            <Link href={link.href} className="hover:text-white transition-colors">{link.label}</Link>
           </li>
         ))}
       </ul>
@@ -38,7 +41,7 @@ export default function Footer() {
             Browse our complete collection and order directly from our official online store.
           </p>
           <a
-            href="https://www.shopdutchcraft.com"
+            href={contact.shopUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-sage hover:bg-sage-dark text-white text-sm font-medium px-4 py-2 rounded transition-colors"
@@ -53,12 +56,12 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold mb-4">Contact</h4>
           <p className="text-sm text-white/70">
-            <a href="tel:931-243-4425" className="hover:text-white transition-colors block mb-2">(931) 243-4425</a>
-            <span className="block">1012 Mitchell St</span>
-            <span className="block">Celina, TN 38551</span>
+            <a href={`tel:${contact.phoneTel}`} className="hover:text-white transition-colors block mb-2">{contact.phone}</a>
+            <span className="block">{contact.address.street}</span>
+            <span className="block">{contact.address.city}, {contact.address.state} {contact.address.zip}</span>
           </p>
           <a
-            href="https://www.facebook.com/DutchCraftMattressCompany"
+            href={contact.facebook}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block mt-4 text-white/70 hover:text-white transition-colors"

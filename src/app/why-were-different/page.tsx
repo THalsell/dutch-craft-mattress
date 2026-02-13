@@ -1,9 +1,16 @@
+import type { Metadata } from "next";
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
+import CTASection from "@/src/components/CTASection";
 import HandcraftedVsMassProduced from "@/src/components/HandcraftedVsMassProduced";
 import NoAdvertising from "@/src/components/NoAdvertising";
 import FamilyVsCorporate from "@/src/components/FamilyVsCorporate";
 import BuiltForLongevity from "@/src/components/BuiltForLongevity";
+
+export const metadata: Metadata = {
+  title: "Why We're Different | Dutch Craft Mattress",
+  description: "Discover what sets Dutch Craft apart — handcrafted construction, no advertising overhead, family values, and mattresses built to last.",
+};
 
 export default function WhyWereDifferentPage() {
   return (
@@ -28,21 +35,12 @@ export default function WhyWereDifferentPage() {
       <FamilyVsCorporate />
       <BuiltForLongevity />
 
-      {/* CTA */}
-      <section className="py-16 md:py-20 bg-sage text-white">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-4">Experience the Difference</h2>
-          <p className="text-white/80 mb-8">
-            Visit an authorized retailer to feel the Dutch Craft difference for yourself.
-          </p>
-          <a
-            href="/find-a-retailer"
-            className="inline-block bg-white hover:bg-fog text-sage font-semibold px-8 py-4 rounded-full transition-colors"
-          >
-            Find a Retailer Near You
-          </a>
-        </div>
-      </section>
+      <CTASection
+        theme="sage"
+        heading="Experience the Difference"
+        description="Visit an authorized retailer to feel the Dutch Craft difference for yourself."
+        buttons={[{ label: "Find a Retailer Near You", href: "/find-a-retailer" }]}
+      />
 
       <Footer />
     </div>

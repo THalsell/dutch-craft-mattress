@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
+import Link from "next/link";
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
+import { contact } from "@/src/data/contact";
+
+export const metadata: Metadata = {
+  title: "Careers | Dutch Craft Mattress",
+  description: "Join the Dutch Craft team. We have open positions in mattress assembly, foam cutting, sewing, truck loading, and Class A truck driving.",
+};
 
 export default function CareersPage() {
   return (
@@ -33,15 +41,15 @@ export default function CareersPage() {
             <h2 className="text-2xl font-bold text-charcoal mb-4">How to Apply</h2>
             <p className="text-slate mb-6">
               Fill out one of the applications below online, or download a printable version and email it to{" "}
-              <a href="mailto:alicia@dutchcraftmattress.com" className="text-sage font-medium hover:text-sage/80 transition-colors">
-                alicia@dutchcraftmattress.com
+              <a href={`mailto:${contact.applicationsEmail}`} className="text-sage font-medium hover:text-sage/80 transition-colors">
+                {contact.applicationsEmail}
               </a>.
             </p>
             <div className="bg-gray-50 rounded-lg p-6 mb-8">
               <p className="text-charcoal font-medium">You can also mail or drop off your application:</p>
               <p className="text-slate mt-2">Dutch Craft</p>
-              <p className="text-slate">1012 Mitchell St</p>
-              <p className="text-slate">Celina, TN 38551</p>
+              <p className="text-slate">{contact.address.street}</p>
+              <p className="text-slate">{contact.address.city}, {contact.address.state} {contact.address.zip}</p>
               <p className="text-slate mt-3">
                 Applications are also available for in-person pickup Monday–Friday, 8:00 AM to 5:00 PM.
               </p>
@@ -49,13 +57,13 @@ export default function CareersPage() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex-1 text-center">
-                <a
+                <Link
                   href="/careers/driver-application"
                   className="block bg-sage text-white py-3 px-6 rounded-lg font-medium hover:bg-sage/90 transition-colors"
                 >
                   Driver Application
                   <span className="block text-sm text-white/70 mt-1">Class A Required</span>
-                </a>
+                </Link>
                 <a
                   href="/careers/driver-application.pdf"
                   target="_blank"
@@ -65,12 +73,12 @@ export default function CareersPage() {
                 </a>
               </div>
               <div className="flex-1 text-center">
-                <a
+                <Link
                   href="/careers/factory-application"
                   className="block bg-sage text-white py-3 px-6 rounded-lg font-medium hover:bg-sage/90 transition-colors"
                 >
                   Factory Application
-                </a>
+                </Link>
                 <a
                   href="/careers/factory-application.pdf"
                   target="_blank"

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { contact } from "@/src/data/contact";
 
 const collections = [
   { name: "Comfort", slug: "comfort" },
@@ -75,13 +76,13 @@ export default function Header() {
             <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 hidden group-hover:block z-50">
               <div className="bg-white border border-border rounded-lg shadow-lg py-2 min-w-55">
                 {collections.map((c) => (
-                  <a
+                  <Link
                     key={c.slug}
                     href={`/collections/${c.slug}`}
                     className="block px-4 py-2 text-sm text-charcoal hover:bg-fog hover:text-sage transition-colors"
                   >
                     {c.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -89,30 +90,30 @@ export default function Header() {
 
           {/* About Us dropdown */}
           <div className="relative group">
-            <a href="/about" className={linkClass}>
+            <Link href="/about" className={linkClass}>
               About Us
-            </a>
+            </Link>
             <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 hidden group-hover:block z-50">
               <div className="bg-white border border-border rounded-lg shadow-lg py-2 min-w-48">
                 {aboutSubLinks.map((link) => (
-                  <a
+                  <Link
                     key={link.href}
                     href={link.href}
                     className="block px-4 py-2 text-sm text-charcoal hover:bg-fog hover:text-sage transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
           </div>
 
-          <a href="/find-a-retailer" className={linkClass}>
+          <Link href="/find-a-retailer" className={linkClass}>
             Find a Retailer
-          </a>
+          </Link>
 
           <a
-            href="https://www.shopdutchcraft.com"
+            href={contact.shopUrl}
             target="_blank"
             rel="noopener noreferrer"
             className={`${linkClass} inline-flex items-center gap-1`}
@@ -123,13 +124,13 @@ export default function Header() {
             </svg>
           </a>
 
-          <a href="/partner-with-us" className={linkClass}>
+          <Link href="/partner-with-us" className={linkClass}>
             Partner with Us
-          </a>
+          </Link>
 
-          <a href="/contact" className={linkClass}>
+          <Link href="/contact" className={linkClass}>
             Contact
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile slide-down nav */}
@@ -155,14 +156,14 @@ export default function Header() {
             {collectionsOpen && (
               <div className="flex flex-col gap-2 pl-4 mt-2">
                 {collections.map((c) => (
-                  <a
+                  <Link
                     key={c.slug}
                     href={`/collections/${c.slug}`}
                     onClick={() => setMenuOpen(false)}
                     className="text-sm text-charcoal hover:text-sage transition-colors"
                   >
                     {c.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             )}
@@ -185,29 +186,29 @@ export default function Header() {
             {aboutOpen && (
               <div className="flex flex-col gap-2 pl-4 mt-2">
                 {aboutSubLinks.map((link) => (
-                  <a
+                  <Link
                     key={link.href}
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
                     className="text-sm text-charcoal hover:text-sage transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             )}
           </div>
 
-          <a
+          <Link
             href="/find-a-retailer"
             onClick={() => setMenuOpen(false)}
             className={linkClass}
           >
             Find a Retailer
-          </a>
+          </Link>
 
           <a
-            href="https://www.shopdutchcraft.com"
+            href={contact.shopUrl}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
@@ -219,21 +220,21 @@ export default function Header() {
             </svg>
           </a>
 
-          <a
+          <Link
             href="/partner-with-us"
             onClick={() => setMenuOpen(false)}
             className={linkClass}
           >
             Partner with Us
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="/contact"
             onClick={() => setMenuOpen(false)}
             className={linkClass}
           >
             Contact
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

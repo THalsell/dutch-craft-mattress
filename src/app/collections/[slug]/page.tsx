@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Header from "@/src/components/Header";
@@ -37,6 +38,16 @@ function ModelGrid({ models, collectionSlug }: { models: Model[]; collectionSlug
       ))}
     </div>
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const collection = collections.find((c) => c.slug === slug);
+  if (!collection) return {};
+  return {
+    title: `${collection.name} Collection | Dutch Craft Mattress`,
+    description: `${collection.description} ${collection.features}`,
+  };
 }
 
 export function generateStaticParams() {
