@@ -16,19 +16,6 @@ export default function WarrantyAndCarePage() {
     <div className="min-h-screen">
       <Header />
 
-      {/* Hero */}
-      <section className="bg-fog py-16 md:py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">
-            Warranty & Care
-          </h1>
-          <p className="text-slate text-lg max-w-2xl mx-auto">
-            We stand behind every mattress we make. Learn about our warranty coverage
-            and how to keep your mattress in top condition.
-          </p>
-        </div>
-      </section>
-
       <WarrantyTable />
       <WarrantyTerms />
       <MattressCare />

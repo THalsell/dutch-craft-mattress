@@ -13,16 +13,6 @@ export default function ContactPage() {
     <div className="min-h-screen">
       <Header />
 
-      {/* Hero */}
-      <section className="bg-sky-300 py-16">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Contact Us</h1>
-          <p className="text-white/80 text-lg">
-            We&apos;d love to hear from you. Reach out to our team for inquiries, support, or partnership opportunities.
-          </p>
-        </div>
-      </section>
-
       {/* Contact Info */}
       <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-6">

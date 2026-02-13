@@ -17,19 +17,6 @@ export default function WhyWereDifferentPage() {
     <div className="min-h-screen">
       <Header />
 
-      {/* Hero */}
-      <section className="bg-charcoal py-20 md:py-28">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
-            Why We&apos;re Different
-          </h1>
-          <p className="text-xl md:text-2xl leading-relaxed text-white/70 max-w-2xl mx-auto">
-            Most mattresses today are built to be replaced.<br />
-            Ours are built to last.
-          </p>
-        </div>
-      </section>
-
       {/* Statement Break #1 */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-6 text-center">
