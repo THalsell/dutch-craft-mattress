@@ -5,6 +5,7 @@ import Link from "next/link";
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
 import { contact } from "@/src/data/contact";
+import { row, table, section, wrapEmailHtml } from "@/src/lib/email-builder";
 
 export default function PartnerWithUsPage() {
   const [form, setForm] = useState({
@@ -13,7 +14,7 @@ export default function PartnerWithUsPage() {
     email: "",
     phone: "",
     location: "",
-    messky: "",
+    message: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
@@ -25,30 +26,15 @@ export default function PartnerWithUsPage() {
     e.preventDefault();
     setStatus("sending");
 
-    const row = (label: string, value: string) =>
-      `<tr><td style="padding:4px 12px 4px 0;font-weight:600;color:#555;white-space:nowrap;vertical-align:top">${label}</td><td style="padding:4px 0;color:#222">${value || "—"}</td></tr>`;
+    const body = table(
+      row("Name", form.name) +
+      row("Company", form.company) +
+      row("Email", form.email) +
+      row("Phone", form.phone) +
+      row("Location", form.location)
+    ) + (form.message ? section("Message", `<p style="font-size:14px;color:#222;white-space:pre-wrap">${form.message}</p>`) : "");
 
-    const html = `
-      <div style="max-width:600px;margin:0 auto;font-family:Arial,sans-serif;color:#333">
-        <div style="background:#4a7c59;padding:24px;text-align:center">
-          <h1 style="color:#fff;margin:0;font-size:22px">Partner With Us Inquiry</h1>
-        </div>
-        <div style="padding:24px">
-          <table style="width:100%;border-collapse:collapse;font-size:14px">
-            ${row("Name", form.name)}
-            ${row("Company", form.company)}
-            ${row("Email", form.email)}
-            ${row("Phone", form.phone)}
-            ${row("Location", form.location)}
-          </table>
-          ${form.messky ? `
-            <div style="margin-top:20px">
-              <h2 style="font-size:16px;color:#4a7c59;border-bottom:2px solid #4a7c59;padding-bottom:6px;margin-bottom:12px">Messky</h2>
-              <p style="font-size:14px;color:#222;white-space:pre-wrap">${form.messky}</p>
-            </div>
-          ` : ""}
-        </div>
-      </div>`;
+    const html = wrapEmailHtml("Partner With Us Inquiry", body);
 
     try {
       const res = await fetch("/api/partner", {
@@ -177,12 +163,12 @@ export default function PartnerWithUsPage() {
             </div>
 
             <div>
-              <label htmlFor="messky" className="block text-sm font-medium text-charcoal mb-1">Messky</label>
+              <label htmlFor="message" className="block text-sm font-medium text-charcoal mb-1">Message</label>
               <textarea
-                id="messky"
-                name="messky"
+                id="message"
+                name="message"
                 rows={5}
-                value={form.messky}
+                value={form.message}
                 onChange={handleChange}
                 className="w-full border border-gray-300 rounded-lg px-4 py-2 text-charcoal focus:outline-none focus:ring-2 focus:ring-sky-300"
                 placeholder="Tell us about your business and why you'd like to partner with Dutch Craft..."

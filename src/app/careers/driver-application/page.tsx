@@ -3,7 +3,12 @@
 import { useState } from "react";
 import ApplicationShell from "@/src/components/ApplicationShell";
 import { inputClass, labelClass, sectionClass, sectionTitle } from "@/src/lib/form-styles";
-import { row, section, table, subhead, wrapEmailHtml, emptyReference } from "@/src/lib/email-builder";
+import { row, section, table, subhead, wrapEmailHtml } from "@/src/lib/email-builder";
+import { updateArrayItem } from "@/src/lib/form-helpers";
+
+function emptyReference() {
+  return { name: "", address: "", phone: "" };
+}
 
 function emptyAddress() {
   return { address: "", city: "", state: "", zip: "", from: "", to: "" };
@@ -67,35 +72,6 @@ export default function DriverApplicationPage() {
     setPersonal({ ...personal, [e.target.name]: e.target.value });
   }
 
-  function updateAddress(i: number, field: string, value: string) {
-    const updated = [...addresses];
-    updated[i] = { ...updated[i], [field]: value };
-    setAddresses(updated);
-  }
-
-  function updateEmployer(i: number, field: string, value: string) {
-    const updated = [...employers];
-    updated[i] = { ...updated[i], [field]: value };
-    setEmployers(updated);
-  }
-
-  function updateReference(i: number, field: string, value: string) {
-    const updated = [...references];
-    updated[i] = { ...updated[i], [field]: value };
-    setReferences(updated);
-  }
-
-  function updateAccident(i: number, field: string, value: string) {
-    const updated = [...accidents];
-    updated[i] = { ...updated[i], [field]: value };
-    setAccidents(updated);
-  }
-
-  function updateConviction(i: number, field: string, value: string) {
-    const updated = [...convictions];
-    updated[i] = { ...updated[i], [field]: value };
-    setConvictions(updated);
-  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -306,31 +282,31 @@ export default function DriverApplicationPage() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-2">
               <div className="md:col-span-2">
                 <label className={labelClass}>Street Address{i === 0 ? " *" : ""}</label>
-                <input type="text" required={i === 0} value={addr.address} onChange={(e) => updateAddress(i, "address", e.target.value)} className={inputClass} />
+                <input type="text" required={i === 0} value={addr.address} onChange={(e) => updateArrayItem(addresses, setAddresses, i,"address", e.target.value)} className={inputClass} />
               </div>
               <div>
                 <label className={labelClass}>City</label>
-                <input type="text" value={addr.city} onChange={(e) => updateAddress(i, "city", e.target.value)} className={inputClass} />
+                <input type="text" value={addr.city} onChange={(e) => updateArrayItem(addresses, setAddresses, i,"city", e.target.value)} className={inputClass} />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className={labelClass}>State</label>
-                  <input type="text" value={addr.state} onChange={(e) => updateAddress(i, "state", e.target.value)} className={inputClass} />
+                  <input type="text" value={addr.state} onChange={(e) => updateArrayItem(addresses, setAddresses, i,"state", e.target.value)} className={inputClass} />
                 </div>
                 <div>
                   <label className={labelClass}>Zip</label>
-                  <input type="text" value={addr.zip} onChange={(e) => updateAddress(i, "zip", e.target.value)} className={inputClass} />
+                  <input type="text" value={addr.zip} onChange={(e) => updateArrayItem(addresses, setAddresses, i,"zip", e.target.value)} className={inputClass} />
                 </div>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className={labelClass}>From</label>
-                <input type="text" value={addr.from} onChange={(e) => updateAddress(i, "from", e.target.value)} className={inputClass} />
+                <input type="text" value={addr.from} onChange={(e) => updateArrayItem(addresses, setAddresses, i,"from", e.target.value)} className={inputClass} />
               </div>
               <div>
                 <label className={labelClass}>To</label>
-                <input type="text" value={addr.to} onChange={(e) => updateAddress(i, "to", e.target.value)} className={inputClass} placeholder={i === 0 ? "Present" : ""} />
+                <input type="text" value={addr.to} onChange={(e) => updateArrayItem(addresses, setAddresses, i,"to", e.target.value)} className={inputClass} placeholder={i === 0 ? "Present" : ""} />
               </div>
             </div>
           </div>
@@ -381,35 +357,35 @@ export default function DriverApplicationPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-2">
               <div>
                 <label className={labelClass}>Employer Name</label>
-                <input type="text" value={emp.name} onChange={(e) => updateEmployer(i, "name", e.target.value)} className={inputClass} />
+                <input type="text" value={emp.name} onChange={(e) => updateArrayItem(employers, setEmployers, i,"name", e.target.value)} className={inputClass} />
               </div>
               <div>
                 <label className={labelClass}>Position Held</label>
-                <input type="text" value={emp.position} onChange={(e) => updateEmployer(i, "position", e.target.value)} className={inputClass} />
+                <input type="text" value={emp.position} onChange={(e) => updateArrayItem(employers, setEmployers, i,"position", e.target.value)} className={inputClass} />
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-2">
               <div>
                 <label className={labelClass}>Address</label>
-                <input type="text" value={emp.address} onChange={(e) => updateEmployer(i, "address", e.target.value)} className={inputClass} />
+                <input type="text" value={emp.address} onChange={(e) => updateArrayItem(employers, setEmployers, i,"address", e.target.value)} className={inputClass} />
               </div>
               <div>
                 <label className={labelClass}>Phone</label>
-                <input type="tel" value={emp.phone} onChange={(e) => updateEmployer(i, "phone", e.target.value)} className={inputClass} />
+                <input type="tel" value={emp.phone} onChange={(e) => updateArrayItem(employers, setEmployers, i,"phone", e.target.value)} className={inputClass} />
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-2">
               <div>
                 <label className={labelClass}>From</label>
-                <input type="text" value={emp.from} onChange={(e) => updateEmployer(i, "from", e.target.value)} className={inputClass} />
+                <input type="text" value={emp.from} onChange={(e) => updateArrayItem(employers, setEmployers, i,"from", e.target.value)} className={inputClass} />
               </div>
               <div>
                 <label className={labelClass}>To</label>
-                <input type="text" value={emp.to} onChange={(e) => updateEmployer(i, "to", e.target.value)} className={inputClass} />
+                <input type="text" value={emp.to} onChange={(e) => updateArrayItem(employers, setEmployers, i,"to", e.target.value)} className={inputClass} />
               </div>
               <div>
                 <label className={labelClass}>Reason for Leaving</label>
-                <input type="text" value={emp.reasonForLeaving} onChange={(e) => updateEmployer(i, "reasonForLeaving", e.target.value)} className={inputClass} />
+                <input type="text" value={emp.reasonForLeaving} onChange={(e) => updateArrayItem(employers, setEmployers, i,"reasonForLeaving", e.target.value)} className={inputClass} />
               </div>
             </div>
           </div>
@@ -483,15 +459,15 @@ export default function DriverApplicationPage() {
           <div key={i} className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             <div>
               <label className={labelClass}>Date</label>
-              <input type="text" value={acc.date} onChange={(e) => updateAccident(i, "date", e.target.value)} className={inputClass} />
+              <input type="text" value={acc.date} onChange={(e) => updateArrayItem(accidents, setAccidents, i,"date", e.target.value)} className={inputClass} />
             </div>
             <div>
               <label className={labelClass}>Nature of Accident</label>
-              <input type="text" value={acc.nature} onChange={(e) => updateAccident(i, "nature", e.target.value)} className={inputClass} />
+              <input type="text" value={acc.nature} onChange={(e) => updateArrayItem(accidents, setAccidents, i,"nature", e.target.value)} className={inputClass} />
             </div>
             <div>
               <label className={labelClass}>Location</label>
-              <input type="text" value={acc.location} onChange={(e) => updateAccident(i, "location", e.target.value)} className={inputClass} />
+              <input type="text" value={acc.location} onChange={(e) => updateArrayItem(accidents, setAccidents, i,"location", e.target.value)} className={inputClass} />
             </div>
           </div>
         ))}
@@ -511,19 +487,19 @@ export default function DriverApplicationPage() {
           <div key={i} className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
             <div>
               <label className={labelClass}>Date</label>
-              <input type="text" value={conv.date} onChange={(e) => updateConviction(i, "date", e.target.value)} className={inputClass} />
+              <input type="text" value={conv.date} onChange={(e) => updateArrayItem(convictions, setConvictions, i,"date", e.target.value)} className={inputClass} />
             </div>
             <div>
               <label className={labelClass}>Location</label>
-              <input type="text" value={conv.location} onChange={(e) => updateConviction(i, "location", e.target.value)} className={inputClass} />
+              <input type="text" value={conv.location} onChange={(e) => updateArrayItem(convictions, setConvictions, i,"location", e.target.value)} className={inputClass} />
             </div>
             <div>
               <label className={labelClass}>Charge</label>
-              <input type="text" value={conv.charge} onChange={(e) => updateConviction(i, "charge", e.target.value)} className={inputClass} />
+              <input type="text" value={conv.charge} onChange={(e) => updateArrayItem(convictions, setConvictions, i,"charge", e.target.value)} className={inputClass} />
             </div>
             <div>
               <label className={labelClass}>Penalty</label>
-              <input type="text" value={conv.penalty} onChange={(e) => updateConviction(i, "penalty", e.target.value)} className={inputClass} />
+              <input type="text" value={conv.penalty} onChange={(e) => updateArrayItem(convictions, setConvictions, i,"penalty", e.target.value)} className={inputClass} />
             </div>
           </div>
         ))}
@@ -586,15 +562,15 @@ export default function DriverApplicationPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
                 <label className={labelClass}>Name</label>
-                <input type="text" value={ref.name} onChange={(e) => updateReference(i, "name", e.target.value)} className={inputClass} />
+                <input type="text" value={ref.name} onChange={(e) => updateArrayItem(references, setReferences, i,"name", e.target.value)} className={inputClass} />
               </div>
               <div>
                 <label className={labelClass}>Address</label>
-                <input type="text" value={ref.address} onChange={(e) => updateReference(i, "address", e.target.value)} className={inputClass} />
+                <input type="text" value={ref.address} onChange={(e) => updateArrayItem(references, setReferences, i,"address", e.target.value)} className={inputClass} />
               </div>
               <div>
                 <label className={labelClass}>Phone</label>
-                <input type="tel" value={ref.phone} onChange={(e) => updateReference(i, "phone", e.target.value)} className={inputClass} />
+                <input type="tel" value={ref.phone} onChange={(e) => updateArrayItem(references, setReferences, i,"phone", e.target.value)} className={inputClass} />
               </div>
             </div>
           </div>

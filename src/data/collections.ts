@@ -4,13 +4,6 @@ export interface Benefit {
   size?: string;
 }
 
-export interface CoilCount {
-  twin?: number;
-  full?: number;
-  queen?: number;
-  king?: number;
-}
-
 export interface MattressSpecs {
   height?: string;
   warranty?: string;
@@ -31,15 +24,10 @@ export interface ModelDetails {
   firmModelAvailable?: boolean;
   alsoAvailable?: string;
   comfortLevel?: string;
-  quiltLayer?: string;
   coverFabric?: string;
-  supportSystem?: string;
   design?: string | string[];
-  coilCount?: CoilCount;
   specs?: MattressSpecs;
   performance?: string[];
-  certifications?: string[];
-  idealFor?: string[];
   iconsImage?: string;
   diagrams?: DiagramVariant[];
 }
@@ -90,9 +78,7 @@ export const collections: Collection[] = [
         subtitle: "Luxury Firm",
         firmModelAvailable: true,
         comfortLevel: "Luxury Firm",
-        quiltLayer: "2\" Quilt Foam",
         coverFabric: "Aloe Vera Fabric",
-        supportSystem: "312 Spring Unit",
         design: "Open coil construction for durability and consistent support",
         specs: { height: "11.5 inches", warranty: "10-Year Warranty", flippable: "Yes (Two-Sided Design)" },
         performance: [
@@ -100,11 +86,6 @@ export const collections: Collection[] = [
           "Long-lasting sleep surface that springs back to its original shape after each use",
           "Balanced support and comfort for everyday sleepers",
           "Firm feel with responsive comfort layers",
-        ],
-        certifications: [
-          "Two-Sided / Flippable Design – extends mattress lifespan",
-          "Comfort Support System – balanced firmness and pressure relief",
-          "CertiPUR-US® Foams – made without harmful chemicals and low VOC emissions",
         ],
         iconsImage: "/collections/comfort/winfield-icons.png",
       } },
@@ -232,7 +213,6 @@ export const collections: Collection[] = [
         alsoAvailable: "Plush Model Available",
         comfortLevel: "Pillow Top",
         coverFabric: "Quilted to 1½\" Poly Foam",
-        supportSystem: "Continuous Coil System with Double Edge Support",
         design: "Quilted 1½\" poly foam with 1¾\" HD plush foam, breathable cotton insulator pad, and continuous coil system with double edge support in a two-sided flippable construction",
         specs: { flippable: "Yes (Two-Sided Design)" },
         performance: [
@@ -247,7 +227,6 @@ export const collections: Collection[] = [
         alsoAvailable: "Plush Model Available",
         comfortLevel: "Firm",
         coverFabric: "Quilted to ¾\" Poly Foam",
-        supportSystem: "Continuous Coil System with Double Edge Support",
         design: "Quilted ¾\" poly foam with 1½\" HD support foam, breathable cotton insulator pad, and continuous coil system with double edge support in a two-sided flippable construction",
         specs: { flippable: "Yes (Two-Sided Design)" },
         performance: [
@@ -278,7 +257,6 @@ export const collections: Collection[] = [
             alsoAvailable: "Firm and Plush Models Available",
             comfortLevel: "Pillow Top",
             coverFabric: "2\" HD Comfort Foam",
-            supportSystem: "8\" Caliber Edge® Coil Unit",
             design: "2\" HD comfort foam with 1\" HD support base and 8\" Caliber Edge® coil unit",
             specs: { height: "12 inches", warranty: "10-Year Warranty" },
             performance: [
@@ -299,7 +277,6 @@ export const collections: Collection[] = [
             alsoAvailable: "Firm and Plush Models Available",
             comfortLevel: "Pillow Top",
             coverFabric: "1\" Graphite Memory Foam",
-            supportSystem: "8\" Caliber Edge® Coil Unit",
             design: "1\" graphite memory foam with 2\" HD comfort foam, 1\" HD support base, and 8\" Caliber Edge® coil unit",
             specs: { height: "13 inches", warranty: "10-Year Warranty" },
             performance: [
@@ -320,7 +297,6 @@ export const collections: Collection[] = [
             alsoAvailable: "Plush Model Available",
             comfortLevel: "Firm",
             coverFabric: "Bronze PCM Cooling Fabric",
-            supportSystem: "8\" Elite Pocket Coil Unit",
             design: "Bronze PCM cooling fabric with 1½\" HD firm poly foam and 8\" elite pocket coil unit for consistent support and cooling",
             specs: { height: "12 inches", warranty: "15-Year Warranty" },
             performance: [
@@ -340,7 +316,6 @@ export const collections: Collection[] = [
             firmModelAvailable: true,
             comfortLevel: "Plush",
             coverFabric: "Bronze PCM Cooling Fabric",
-            supportSystem: "8\" Elite Pocket Coil Unit",
             design: "Bronze PCM cooling fabric with 1\" graphite memory foam, 2\" HD firm poly foam, and 8\" elite pocket coil unit",
             specs: { height: "13.5 inches", warranty: "15-Year Warranty" },
             performance: [
@@ -360,7 +335,6 @@ export const collections: Collection[] = [
             firmModelAvailable: true,
             comfortLevel: "Plush",
             coverFabric: "Cool Touch Fabric",
-            supportSystem: "8\" Elite Pocket Coil Unit",
             design: "Cool touch fabric with 2\" HD foam & Joma wool, 2\" natural latex, and 8\" elite pocket coil unit",
             specs: { height: "13 inches", warranty: "15-Year Warranty" },
             performance: [
@@ -380,7 +354,6 @@ export const collections: Collection[] = [
             alsoAvailable: "Firm and Plush Models Available",
             comfortLevel: "Pillow Top",
             coverFabric: "Gold PCM Cold Fabric",
-            supportSystem: "8\" Elite Pocket Coil Unit",
             design: "Gold PCM cold fabric with 1\" graphite-infused gel foam, NanoCoil® layer, and 8\" elite pocket coil unit",
             specs: { height: "16 inches", warranty: "15-Year Warranty" },
             performance: [
@@ -400,7 +373,6 @@ export const collections: Collection[] = [
             subtitle: "Pillow Top",
             comfortLevel: "Pillow Top",
             coverFabric: "Gold PCM Cold Fabric",
-            supportSystem: "8\" Elite Pocket Coil Unit",
             design: "Gold PCM cold fabric with 2\" natural latex, 3\" HD plush foam, and 8\" elite pocket coil unit",
             specs: { height: "16 inches", warranty: "15-Year Warranty" },
             performance: [
@@ -418,7 +390,6 @@ export const collections: Collection[] = [
             subtitle: "Hybrid",
             comfortLevel: "Hybrid",
             coverFabric: "Gold PCM Cold Fabric with Removable Zippered Cover",
-            supportSystem: "8\" Elite Pocket Coil Unit",
             design: "Gold PCM cold fabric with removable zippered cover, 2\" graphite memory foam, and 8\" elite pocket coil unit",
             specs: { height: "13 inches", warranty: "15-Year Warranty" },
             performance: [
@@ -436,7 +407,6 @@ export const collections: Collection[] = [
             subtitle: "Hybrid",
             comfortLevel: "Hybrid",
             coverFabric: "Gold PCM Cold Fabric with Removable Zippered Cover",
-            supportSystem: "8\" Elite Pocket Coil Unit",
             design: "Gold PCM cold fabric with removable zippered cover, 2\" graphite memory foam, and 8\" elite pocket coil unit",
             specs: { height: "13 inches", warranty: "15-Year Warranty" },
             performance: [
@@ -460,7 +430,6 @@ export const collections: Collection[] = [
             alsoAvailable: "Firm and Plush Models Available",
             comfortLevel: "Pillow Top",
             coverFabric: "Gold PCM Cold Fabric",
-            supportSystem: "8\" Elite Pocket Coil Unit",
             design: "Hand tufted construction with Gold PCM cold fabric, 1¾\" HD plush poly foam, and 8\" elite pocket coil unit",
             specs: { height: "16 inches", warranty: "15-Year Warranty" },
             performance: [
@@ -481,7 +450,6 @@ export const collections: Collection[] = [
             alsoAvailable: "Firm and Plush Models Available",
             comfortLevel: "Pillow Top",
             coverFabric: "PCM Cool Fabric",
-            supportSystem: "8\" Elite Pocket Coil Unit",
             design: "PCM cool fabric with 1¾\" plush poly foam, 1\" HD support foam, and 8\" elite pocket coil unit in a two-sided flippable construction",
             specs: { height: "16 inches", warranty: "15-Year Warranty", flippable: "Yes (Two-Sided Design)" },
             performance: [
@@ -502,7 +470,6 @@ export const collections: Collection[] = [
             alsoAvailable: "Firm and Plush Models Available",
             comfortLevel: "Pillow Top",
             coverFabric: "1¾\" Plush Poly Foam",
-            supportSystem: "8\" Caliber Edge® Coil Unit",
             design: "1¾\" plush poly foam with 5⁄8\" comfort foam and 8\" Caliber Edge® coil unit in a two-sided flippable construction",
             specs: { height: "16 inches", warranty: "10-Year Warranty", flippable: "Yes (Two-Sided Design)" },
             performance: [
@@ -527,7 +494,6 @@ export const collections: Collection[] = [
             subtitle: "Firm",
             comfortLevel: "Firm",
             coverFabric: "Aarogy Fabric with Joma Wool",
-            supportSystem: "8\" Quantum Edge® Coil Unit",
             design: "Aarogy fabric with Joma wool, 1½\" copper memory foam, 3\" firm natural latex, and 8\" Quantum Edge® coil unit",
             specs: { height: "14.5 inches", warranty: "20-Year Warranty" },
             performance: [
@@ -545,7 +511,6 @@ export const collections: Collection[] = [
             subtitle: "Plush",
             comfortLevel: "Plush",
             coverFabric: "Aarogy Fabric with Joma Wool",
-            supportSystem: "8\" Quantum Edge® Coil Unit",
             design: "Aarogy fabric with Joma wool, 1½\" copper memory foam, 3\" firm natural latex, and 8\" Quantum Edge® coil unit",
             specs: { height: "14.5 inches", warranty: "20-Year Warranty" },
             performance: [
@@ -661,7 +626,6 @@ export const collections: Collection[] = [
       { name: "Hybrid HD", details: "Hybrid with LURACOR® foam and Quantum Edge® coils. Available in Firm, Medium, and Plush.", modelDetails: {
         comfortLevel: "Firm / Medium / Plush",
         coverFabric: "SNŌ Zipper Cover",
-        supportSystem: "8\" Quantum Foam Encased",
         design: "SNŌ zipper cover with inner-cool PCM layer, 4 lb & 6 lb memory foam, LURACOR® foam, 8\" Quantum foam encased coils, and 1½\" base foam",
         specs: { height: "14 inches", warranty: "12-Year Warranty" },
         performance: [
@@ -698,7 +662,6 @@ export const collections: Collection[] = [
       { name: "Foam HD", details: "All-foam with LURACOR® foam and HD foam core. Available in Firm, Medium, and Plush.", modelDetails: {
         comfortLevel: "Firm / Medium / Plush",
         coverFabric: "SNŌ Zipper Cover",
-        supportSystem: "High-Density Foam Core",
         design: "SNŌ zipper cover with inner-cool PCM layer, 4 lb memory foam, LURACOR® foam, high-density foam core, and 1½\" base foam",
         specs: { height: "12 inches", warranty: "15-Year Warranty" },
         performance: [
@@ -731,7 +694,6 @@ export const collections: Collection[] = [
       { name: "Hybrid", details: "Hybrid with Quantum Edge® pocket coils. Available in Firm, Medium, and Plush.", modelDetails: {
         comfortLevel: "Firm / Medium / Plush",
         coverFabric: "SNŌ Zipper Cover",
-        supportSystem: "8\" Quantum Edge Pocket Coil",
         design: "SNŌ zipper cover with inner-cool PCM layer, 4 lb memory foam, LURACOR® foam, 8\" Quantum Edge pocket coil, and 1½\" base foam",
         specs: { height: "13.5 inches", warranty: "12-Year Warranty" },
         performance: [
@@ -778,7 +740,6 @@ export const collections: Collection[] = [
         subtitle: "Firm",
         alsoAvailable: "Plush and Pillow Top Models Available",
         comfortLevel: "Firm / Plush / Pillow Top",
-        supportSystem: "8\" Quantum Foam Encased Support Core",
         design: [
           "Firm: 12½\" — 1\" Natural Latex, 2\" Support Foam, 8\" Quantum Foam Encased",
           "Plush: 14½\" — 2\" Natural Latex, 2\" Comfort Foam, 8\" Quantum Foam Encased",
@@ -800,7 +761,6 @@ export const collections: Collection[] = [
       { name: "Courage", details: "Available in Pillow Top.", image: "/collections/legacy-elite-hd/courage.png", mattressImage: "/collections/legacy-elite-hd/courage-pt.png", modelDetails: {
         subtitle: "Pillow Top",
         comfortLevel: "Pillow Top",
-        supportSystem: "8\" Quantum Foam Encased Support Core",
         design: "16½\" pillow top with 2\" Avena® foam, 1\" natural latex, and 1\" NanoCoil® over an 8\" Quantum foam encased support core",
         specs: { warranty: "20-Year Warranty", height: "16½\"" },
         performance: [
@@ -816,7 +776,6 @@ export const collections: Collection[] = [
       { name: "Paramount", details: "Available in Pillow Top.", image: "/collections/legacy-elite-hd/courage.png", mattressImage: "/collections/legacy-elite-hd/courage-pt.png", modelDetails: {
         subtitle: "Pillow Top",
         comfortLevel: "Pillow Top",
-        supportSystem: "8\" Quantum Foam Encased Support Core",
         design: "16½\" pillow top with 2\" 4-lb memory foam, 2\" natural latex, and 2\" comfort foam over an 8\" Quantum foam encased support core",
         specs: { warranty: "20-Year Warranty", height: "16½\"" },
         performance: [
@@ -833,7 +792,6 @@ export const collections: Collection[] = [
         subtitle: "Luxury Firm",
         alsoAvailable: "Plush Model Available",
         comfortLevel: "Luxury Firm / Plush",
-        supportSystem: "8\" Quantum Foam Encased Support Core",
         design: "15\" hybrid design with 2\" 4-lb memory foam and 2\" comfort foam over an 8\" Quantum foam encased support core",
         specs: { warranty: "20-Year Warranty", height: "15\"" },
         performance: [

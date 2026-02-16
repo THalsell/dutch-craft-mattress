@@ -4,6 +4,7 @@ import { useState } from "react";
 import ApplicationShell from "@/src/components/ApplicationShell";
 import { inputClass, labelClass, sectionClass, sectionTitle } from "@/src/lib/form-styles";
 import { row, section, table, subhead, wrapEmailHtml } from "@/src/lib/email-builder";
+import { updateArrayItem } from "@/src/lib/form-helpers";
 
 function emptyEducation() {
   return { name: "", address: "", from: "", to: "", graduated: "", degree: "" };
@@ -57,17 +58,6 @@ export default function FactoryApplicationPage() {
     setEducation({ ...education, [level]: { ...education[level], [field]: value } });
   }
 
-  function updateReference(i: number, field: string, value: string) {
-    const updated = [...references];
-    updated[i] = { ...updated[i], [field]: value };
-    setReferences(updated);
-  }
-
-  function updateEmployment(i: number, field: string, value: string) {
-    const updated = [...employment];
-    updated[i] = { ...updated[i], [field]: value };
-    setEmployment(updated);
-  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -347,25 +337,25 @@ export default function FactoryApplicationPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-2">
               <div>
                 <label className={labelClass}>Full Name</label>
-                <input type="text" value={ref.name} onChange={(e) => updateReference(i, "name", e.target.value)} className={inputClass} />
+                <input type="text" value={ref.name} onChange={(e) => updateArrayItem(references, setReferences, i,"name", e.target.value)} className={inputClass} />
               </div>
               <div>
                 <label className={labelClass}>Relationship</label>
-                <input type="text" value={ref.relationship} onChange={(e) => updateReference(i, "relationship", e.target.value)} className={inputClass} />
+                <input type="text" value={ref.relationship} onChange={(e) => updateArrayItem(references, setReferences, i,"relationship", e.target.value)} className={inputClass} />
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
                 <label className={labelClass}>Company</label>
-                <input type="text" value={ref.company} onChange={(e) => updateReference(i, "company", e.target.value)} className={inputClass} />
+                <input type="text" value={ref.company} onChange={(e) => updateArrayItem(references, setReferences, i,"company", e.target.value)} className={inputClass} />
               </div>
               <div>
                 <label className={labelClass}>Phone</label>
-                <input type="tel" value={ref.phone} onChange={(e) => updateReference(i, "phone", e.target.value)} className={inputClass} />
+                <input type="tel" value={ref.phone} onChange={(e) => updateArrayItem(references, setReferences, i,"phone", e.target.value)} className={inputClass} />
               </div>
               <div>
                 <label className={labelClass}>Address</label>
-                <input type="text" value={ref.address} onChange={(e) => updateReference(i, "address", e.target.value)} className={inputClass} />
+                <input type="text" value={ref.address} onChange={(e) => updateArrayItem(references, setReferences, i,"address", e.target.value)} className={inputClass} />
               </div>
             </div>
           </div>
@@ -381,53 +371,53 @@ export default function FactoryApplicationPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-2">
               <div>
                 <label className={labelClass}>Company</label>
-                <input type="text" value={emp.company} onChange={(e) => updateEmployment(i, "company", e.target.value)} className={inputClass} />
+                <input type="text" value={emp.company} onChange={(e) => updateArrayItem(employment, setEmployment, i,"company", e.target.value)} className={inputClass} />
               </div>
               <div>
                 <label className={labelClass}>Phone</label>
-                <input type="tel" value={emp.phone} onChange={(e) => updateEmployment(i, "phone", e.target.value)} className={inputClass} />
+                <input type="tel" value={emp.phone} onChange={(e) => updateArrayItem(employment, setEmployment, i,"phone", e.target.value)} className={inputClass} />
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-2">
               <div>
                 <label className={labelClass}>Address</label>
-                <input type="text" value={emp.address} onChange={(e) => updateEmployment(i, "address", e.target.value)} className={inputClass} />
+                <input type="text" value={emp.address} onChange={(e) => updateArrayItem(employment, setEmployment, i,"address", e.target.value)} className={inputClass} />
               </div>
               <div>
                 <label className={labelClass}>Supervisor</label>
-                <input type="text" value={emp.supervisor} onChange={(e) => updateEmployment(i, "supervisor", e.target.value)} className={inputClass} />
+                <input type="text" value={emp.supervisor} onChange={(e) => updateArrayItem(employment, setEmployment, i,"supervisor", e.target.value)} className={inputClass} />
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-2">
               <div>
                 <label className={labelClass}>Job Title</label>
-                <input type="text" value={emp.jobTitle} onChange={(e) => updateEmployment(i, "jobTitle", e.target.value)} className={inputClass} />
+                <input type="text" value={emp.jobTitle} onChange={(e) => updateArrayItem(employment, setEmployment, i,"jobTitle", e.target.value)} className={inputClass} />
               </div>
               <div>
                 <label className={labelClass}>Starting Salary</label>
-                <input type="text" value={emp.startingSalary} onChange={(e) => updateEmployment(i, "startingSalary", e.target.value)} className={inputClass} />
+                <input type="text" value={emp.startingSalary} onChange={(e) => updateArrayItem(employment, setEmployment, i,"startingSalary", e.target.value)} className={inputClass} />
               </div>
               <div>
                 <label className={labelClass}>Ending Salary</label>
-                <input type="text" value={emp.endingSalary} onChange={(e) => updateEmployment(i, "endingSalary", e.target.value)} className={inputClass} />
+                <input type="text" value={emp.endingSalary} onChange={(e) => updateArrayItem(employment, setEmployment, i,"endingSalary", e.target.value)} className={inputClass} />
               </div>
             </div>
             <div className="mb-2">
               <label className={labelClass}>Responsibilities</label>
-              <textarea value={emp.responsibilities} onChange={(e) => updateEmployment(i, "responsibilities", e.target.value)} rows={2} className={inputClass} />
+              <textarea value={emp.responsibilities} onChange={(e) => updateArrayItem(employment, setEmployment, i,"responsibilities", e.target.value)} rows={2} className={inputClass} />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-2">
               <div>
                 <label className={labelClass}>From</label>
-                <input type="text" value={emp.from} onChange={(e) => updateEmployment(i, "from", e.target.value)} className={inputClass} />
+                <input type="text" value={emp.from} onChange={(e) => updateArrayItem(employment, setEmployment, i,"from", e.target.value)} className={inputClass} />
               </div>
               <div>
                 <label className={labelClass}>To</label>
-                <input type="text" value={emp.to} onChange={(e) => updateEmployment(i, "to", e.target.value)} className={inputClass} />
+                <input type="text" value={emp.to} onChange={(e) => updateArrayItem(employment, setEmployment, i,"to", e.target.value)} className={inputClass} />
               </div>
               <div>
                 <label className={labelClass}>May we contact?</label>
-                <select value={emp.mayWeContact} onChange={(e) => updateEmployment(i, "mayWeContact", e.target.value)} className={inputClass}>
+                <select value={emp.mayWeContact} onChange={(e) => updateArrayItem(employment, setEmployment, i,"mayWeContact", e.target.value)} className={inputClass}>
                   <option value="">Select</option>
                   <option value="Yes">Yes</option>
                   <option value="No">No</option>
@@ -436,7 +426,7 @@ export default function FactoryApplicationPage() {
             </div>
             <div>
               <label className={labelClass}>Reason for Leaving</label>
-              <input type="text" value={emp.reasonForLeaving} onChange={(e) => updateEmployment(i, "reasonForLeaving", e.target.value)} className={inputClass} />
+              <input type="text" value={emp.reasonForLeaving} onChange={(e) => updateArrayItem(employment, setEmployment, i,"reasonForLeaving", e.target.value)} className={inputClass} />
             </div>
           </div>
         ))}

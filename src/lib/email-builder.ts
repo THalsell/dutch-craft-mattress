@@ -21,7 +21,3 @@ export function wrapEmailHtml(title: string, body: string) {
       </div>
     </div>`;
 }
-
-export function emptyReference() {
-  return { name: "", address: "", phone: "" };
-}

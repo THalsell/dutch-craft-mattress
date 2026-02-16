@@ -114,7 +114,7 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
               {/* Info Grid */}
               <div className="flex flex-wrap justify-center gap-8">
                 {/* Construction, Materials & Specs */}
-                {(model.modelDetails.comfortLevel || model.modelDetails.supportSystem || model.modelDetails.specs) && (
+                {(model.modelDetails.comfortLevel || model.modelDetails.specs) && (
                   <div className="bg-gray-50 rounded-lg p-6 text-center w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)]">
                     <h3 className="text-sm font-bold text-charcoal uppercase tracking-wide mb-4">Construction & Materials</h3>
                     <div className="space-y-2 text-sm text-slate">

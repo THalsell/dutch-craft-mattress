@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import type { DiagramVariant } from "@/src/data/collections";
 
 export default function DiagramCarousel({ modelName, diagrams }: { modelName: string; diagrams: DiagramVariant[] }) {
@@ -41,16 +42,22 @@ export default function DiagramCarousel({ modelName, diagrams }: { modelName: st
           {diagrams.length > 1 && (
             <h4 className="text-xl font-semibold text-charcoal mb-4">{variant.label}</h4>
           )}
-          <img
+          <Image
             src={variant.diagram}
             alt={`${modelName} ${variant.label} diagram`}
-            className="mx-auto mb-4"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="mx-auto mb-4 w-full h-auto"
           />
           {variant.iconsImage && (
-            <img
+            <Image
               src={variant.iconsImage}
               alt={`${modelName} ${variant.label} features`}
-              className="mx-auto"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="mx-auto w-full h-auto"
             />
           )}
         </div>
