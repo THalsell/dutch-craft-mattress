@@ -23,7 +23,7 @@ const items = [
   {
     chip: 'Durability',
     title: 'Built for Longevity',
-    body: 'Backed by warranties up to 15 years because quality should last.',
+    body: 'Backed by warranties up to 20 years because quality should last.',
     image: '/built-for-longevity.png',
   },
 ];
