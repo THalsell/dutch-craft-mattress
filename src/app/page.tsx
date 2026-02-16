@@ -7,6 +7,7 @@ import BrandStory from "@/src/components/BrandStory";
 import FeaturedCollections from "@/src/components/FeaturedCollections";
 import CTASection from "@/src/components/CTASection";
 import Footer from "@/src/components/Footer";
+import RetailerBanner from "@/src/components/RetailerBanner";
 import { contact } from "@/src/data/contact";
 
 export default function Home() {
@@ -25,12 +26,7 @@ export default function Home() {
         description="Browse our complete collection online and have your handcrafted mattress delivered directly to your door."
         buttons={[{ label: "Shop From Home", href: contact.shopUrl, external: true }]}
       />
-      <CTASection
-        theme="fog"
-        heading="Find a Retailer Near You"
-        description="Experience Dutch Craft Mattress quality in person at an authorized retailer."
-        buttons={[{ label: "Find a Retailer", href: "/find-a-retailer" }]}
-      />
+      <RetailerBanner />
       <Footer />
     </div>
   );

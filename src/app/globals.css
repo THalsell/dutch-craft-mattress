@@ -31,10 +31,15 @@
   --color-border: #E3E6E5;
 
   --font-sans: var(--font-montserrat);
+  --font-serif: var(--font-playfair);
 }
 
 body {
   background: #ffffff;
   color: var(--color-slate);
   font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair), Georgia, serif;
 }
