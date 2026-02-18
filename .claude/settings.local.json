@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /mnt/c/Users/clayp/Documents/GitHub/dutch-craft-mattress log --all --full-history -- src/components/WhyDutchCraft.tsx)"
+    ]
+  }
+}

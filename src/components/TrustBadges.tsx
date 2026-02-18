@@ -8,7 +8,7 @@ const badges = [
     ),
   },
   {
-    label: "Made in Tennessee, USA",
+    label: "Hand Crafted in the USA",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
