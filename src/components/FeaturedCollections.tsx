@@ -52,7 +52,8 @@ export default function FeaturedCollections() {
           {/* Left arrow */}
           <button
             onClick={() => scroll("left")}
-            className="absolute -left-10 md:-left-12 top-1/3 -translate-y-1/2 z-10 text-charcoal hover:text-sky-300 transition-colors"
+            disabled={!canScrollLeft}
+            className="absolute -left-10 md:-left-12 top-1/3 -translate-y-1/2 z-10 text-charcoal hover:text-sky-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             aria-label="Scroll left"
           >
             <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -63,7 +64,8 @@ export default function FeaturedCollections() {
           {/* Right arrow */}
           <button
             onClick={() => scroll("right")}
-            className="absolute -right-10 md:-right-12 top-1/3 -translate-y-1/2 z-10 text-charcoal hover:text-sky-300 transition-colors"
+            disabled={!canScrollRight}
+            className="absolute -right-10 md:-right-12 top-1/3 -translate-y-1/2 z-10 text-charcoal hover:text-sky-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             aria-label="Scroll right"
           >
             <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -80,7 +82,7 @@ export default function FeaturedCollections() {
             {visibleCollections.map((collection) => (
               <div
                 key={collection.slug}
-                className="flex flex-col items-center text-center flex-shrink-0 w-[calc(50%-16px)] sm:w-[calc(50%-16px)] lg:w-[calc(25%-24px)] snap-start"
+                className="flex flex-col items-center text-center shrink-0 w-[calc(50%-16px)] sm:w-[calc(50%-16px)] lg:w-[calc(25%-24px)] snap-start"
               >
                 <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-sky-300/10 mb-5">
                   {collection.image && (

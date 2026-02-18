@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
 import { collections, type Collection, type Model } from "@/src/data/collections";
@@ -17,17 +18,23 @@ function getAllModels(collection: Collection): Model[] {
   return collection.models ?? [];
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string; model: string }> }): Promise<Metadata> {
-  const { slug, model: modelSlug } = await params;
+export async function generateMetadata(
+  { params }: { params: { slug: string; model: string } }
+): Promise<Metadata> {
+  const { slug, model: modelSlug } = params;
+
   const collection = collections.find((c) => c.slug === slug);
   if (!collection) return {};
+
   const model = getAllModels(collection).find((m) => slugify(m.name) === modelSlug);
   if (!model) return {};
+
   return {
     title: `${model.name} — ${collection.name} | Dutch Craft Mattress`,
     description: model.details,
   };
 }
+
 
 export function generateStaticParams() {
   const params: { slug: string; model: string }[] = [];
@@ -39,14 +46,17 @@ export function generateStaticParams() {
   return params;
 }
 
-export default async function ModelPage({ params }: { params: Promise<{ slug: string; model: string }> }) {
-  const { slug, model: modelSlug } = await params;
-  const collection = collections.find((c) => c.slug === slug);
+export default async function ModelPage({
+  params,
+}: {
+  params: { slug: string; model: string };
+}) {
+  const { slug, model: modelSlug } = params;
 
+  const collection = collections.find((c) => c.slug === slug);
   if (!collection) return notFound();
 
   const model = getAllModels(collection).find((m) => slugify(m.name) === modelSlug);
-
   if (!model) return notFound();
 
   return (
@@ -88,10 +98,12 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
               <div className="flex flex-col-reverse lg:flex-row gap-8 mb-10">
                 {model.mattressImage && (
                   <div className="lg:w-1/2">
-                    <img
+                    <Image
                       src={model.mattressImage}
                       alt={`${model.name} mattress`}
                       className="w-full rounded-lg"
+                      width={500}
+                      height={500}
                     />
                   </div>
                 )}
@@ -156,10 +168,12 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
               {/* Icons */}
               {model.modelDetails.iconsImage && (
                 <div className="mt-8">
-                  <img
+                  <Image
                     src={model.modelDetails.iconsImage}
                     alt={`${model.name} features`}
                     className="mx-auto"
+                    width={800}
+                    height={400}
                   />
                 </div>
               )}
@@ -175,15 +189,17 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
               {(model.mattressImage || model.benefits) && (
                 <div className="mb-12 flex flex-col lg:flex-row items-start gap-16">
                   {model.benefits && (
-                    <div className="flex-shrink-0 w-full lg:w-1/3">
+                    <div className="shrink-0 w-full lg:w-1/3">
                       <h3 className="text-sm font-bold text-charcoal uppercase tracking-wide mb-6 text-center">Key Benefits</h3>
                       <div className="flex justify-center gap-8">
                         {model.benefits.map((benefit) => (
                           <div key={benefit.label} className="text-center">
-                            <img
+                            <Image
                               src={benefit.icon}
                               alt={benefit.label}
                               className={`${benefit.size || 'w-40 h-40'} mx-auto mb-2 object-contain contrast-125 brightness-75`}
+                              width={160}
+                              height={160}
                             />
                             <p className="text-sm text-slate">{benefit.label}</p>
                           </div>
@@ -193,10 +209,12 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
                   )}
                   {model.mattressImage && (
                     <div className="flex-1">
-                      <img
+                      <Image
                         src={model.mattressImage}
                         alt={`${model.name} mattress`}
                         className="w-full"
+                        width={600}
+                        height={600}
                       />
                     </div>
                   )}
@@ -206,10 +224,12 @@ export default async function ModelPage({ params }: { params: Promise<{ slug: st
               {model.diagram && (
                 <div className="mb-8 text-center">
                   <h3 className="text-sm font-bold text-charcoal uppercase tracking-wide mb-6">See What&apos;s Inside</h3>
-                  <img
+                  <Image
                     src={model.diagram}
                     alt={`${model.name} diagram`}
                     className="mx-auto mb-4"
+                    width={800}
+                    height={600}
                   />
                   <p className="text-muted text-xs">*Elements may vary depending on specific model</p>
                 </div>
