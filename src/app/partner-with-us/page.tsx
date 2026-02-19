@@ -77,12 +77,13 @@ export default function PartnerWithUsPage() {
       <Header />
 
       {/* Hero */}
-      <section className="bg-sky-300 py-16">
+      <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Partner With Us</h1>
-          <p className="text-white/80 text-lg">
+          <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Partner With Us</h1>
+          <p className="text-slate text-lg">
             Interested in carrying Dutch Craft mattresses? Fill out the form below and our team will be in touch.
           </p>
+          <div className="mt-8 border-t-2 border-sky-300" />
         </div>
       </section>
 

@@ -85,6 +85,17 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
         </div>
       </section>
 
+      {/* Collection Overview */}
+      {!collection.comingSoon && (
+        <section className="py-14 bg-fog">
+          <div className="max-w-3xl mx-auto px-6 text-center">
+            <h2 className="text-2xl font-bold text-charcoal mb-4">Collection Overview</h2>
+            <p className="text-slate text-lg leading-relaxed mb-3">{collection.description}</p>
+            <p className="text-slate text-base leading-relaxed">{collection.features}</p>
+          </div>
+        </section>
+      )}
+
       {/* Models */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">

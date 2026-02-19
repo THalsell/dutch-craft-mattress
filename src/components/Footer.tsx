@@ -40,26 +40,18 @@ export default function Footer() {
           <p className="text-sm text-white/70 mb-4">
             Browse our complete collection and order directly from our official online store.
           </p>
-          <a
-            href={contact.shopUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/shop"
             className="inline-flex items-center gap-2 bg-sky-300 hover:bg-navy-700 text-white text-sm font-medium px-4 py-2 rounded transition-colors"
           >
             Shop From Home
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-          </a>
-          <p className="text-xs text-white/50 mt-2">Opens in a new tab</p>
+          </Link>
         </div>
         <div>
           <h4 className="font-semibold mb-4">Contact</h4>
-          <p className="text-sm text-white/70">
-            <a href={`tel:${contact.phoneTel}`} className="hover:text-white transition-colors block mb-2">{contact.phone}</a>
-            <span className="block">{contact.address.street}</span>
-            <span className="block">{contact.address.city}, {contact.address.state} {contact.address.zip}</span>
-          </p>
+          <Link href="/contact" className="block text-sm text-white/70 hover:text-white transition-colors mb-4">
+            Send us a message
+          </Link>
           <a
             href={contact.facebook}
             target="_blank"

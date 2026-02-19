@@ -76,12 +76,13 @@ export default function FindRetailerPage() {
       <Header />
 
       {/* Hero */}
-      <section className="bg-sky-300 py-16">
+      <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Find a Retailer</h1>
-          <p className="text-white/80 text-lg">
+          <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Find a Retailer</h1>
+          <p className="text-slate text-lg">
             Enter your zip code to find authorized Dutch Craft dealers within 50 miles.
           </p>
+          <div className="mt-8 border-t-2 border-sky-300" />
         </div>
       </section>
 

@@ -1,55 +1,92 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
-import { contact } from "@/src/data/contact";
-
-export const metadata: Metadata = {
-  title: "Contact Us | Dutch Craft Mattress",
-  description: "Get in touch with Dutch Craft Mattress. Call us, visit our factory in Celina, TN, or reach out for inquiries and support.",
-};
 
 export default function ContactPage() {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setStatus("sending");
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+
+    setStatus(res.ok ? "success" : "error");
+  }
+
+  const inputClass =
+    "w-full border border-gray-200 rounded-lg px-4 py-3 text-charcoal placeholder-slate/60 focus:outline-none focus:ring-2 focus:ring-sky-300 transition";
+
   return (
     <div className="min-h-screen">
       <Header />
 
-      {/* Contact Info */}
       <section className="py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="max-w-xl mx-auto px-6">
+          <h1 className="text-3xl md:text-4xl font-bold text-charcoal mb-3">Contact Us</h1>
+          <p className="text-slate mb-10">Have a question? Fill out the form below and we'll get back to you.</p>
 
-            {/* Phone */}
-            <div className="bg-gray-50 rounded-lg p-6 text-center">
-              <svg className="w-8 h-8 mx-auto mb-4 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-              </svg>
-              <h3 className="text-sm font-bold text-charcoal uppercase tracking-wide mb-2">Phone</h3>
-              <a href={`tel:${contact.phoneTel}`} className="text-sky-300 hover:text-sky-300/80 font-medium">{contact.phone}</a>
+          {status === "success" ? (
+            <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
+              <p className="text-green-700 font-semibold text-lg">Message sent!</p>
+              <p className="text-green-600 mt-1">We'll be in touch soon.</p>
             </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              <div>
+                <label className="block text-sm font-medium text-charcoal mb-1">Name</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Your name"
+                  className={inputClass}
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-charcoal mb-1">Email</label>
+                <input
+                  type="email"
+                  required
+                  placeholder="your@email.com"
+                  className={inputClass}
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-charcoal mb-1">Message</label>
+                <textarea
+                  required
+                  rows={5}
+                  placeholder="How can we help you?"
+                  className={inputClass}
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                />
+              </div>
 
-            {/* Address */}
-            <div className="bg-gray-50 rounded-lg p-6 text-center">
-              <svg className="w-8 h-8 mx-auto mb-4 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-              </svg>
-              <h3 className="text-sm font-bold text-charcoal uppercase tracking-wide mb-2">Address</h3>
-              <p className="text-slate">{contact.address.street}</p>
-              <p className="text-slate">{contact.address.city}, {contact.address.state} {contact.address.zip}</p>
-            </div>
+              {status === "error" && (
+                <p className="text-red-600 text-sm">Something went wrong. Please try again.</p>
+              )}
 
-            {/* Hours */}
-            <div className="bg-gray-50 rounded-lg p-6 text-center">
-              <svg className="w-8 h-8 mx-auto mb-4 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <h3 className="text-sm font-bold text-charcoal uppercase tracking-wide mb-2">Hours</h3>
-              <p className="text-slate">Monday - Friday</p>
-              <p className="text-slate">9:00 AM - 5:00 PM</p>
-              <p className="text-slate mt-1">Closed Saturday & Sunday</p>
-            </div>
-
-          </div>
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                className="bg-sky-300 hover:bg-sky-400 text-white font-semibold px-8 py-3 rounded-full transition-colors disabled:opacity-60"
+              >
+                {status === "sending" ? "Sending…" : "Send Message"}
+              </button>
+            </form>
+          )}
         </div>
       </section>
 

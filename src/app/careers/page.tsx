@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
-import { contact } from "@/src/data/contact";
 
 export const metadata: Metadata = {
   title: "Careers | Dutch Craft Mattress",
@@ -15,18 +14,19 @@ export default function CareersPage() {
       <Header />
 
       {/* Hero */}
-      <section className="bg-sky-300 py-16">
+      <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Searching for a New Job?</h1>
-          <p className="text-white/80 text-lg">
+          <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">Searching for a New Job?</h1>
+          <p className="text-slate text-lg">
             Look no further — our Dutch Craft manufacturers have many great opportunities for everybody.
           </p>
+          <div className="mt-8 border-t-2 border-sky-300" />
         </div>
       </section>
 
       {/* Content */}
       <section className="py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-6">
+        <div className="max-w-3xl mx-auto px-6 text-center">
 
           {/* Positions */}
           <div className="mb-12">
@@ -40,26 +40,14 @@ export default function CareersPage() {
           <div className="mb-12">
             <h2 className="text-2xl font-bold text-charcoal mb-4">How to Apply</h2>
             <p className="text-slate mb-6">
-              Fill out one of the applications below online, or download a printable version and email it to{" "}
-              <a href={`mailto:${contact.applicationsEmail}`} className="text-sky-300 font-medium hover:text-sky-300/80 transition-colors">
-                {contact.applicationsEmail}
-              </a>.
+              Fill out one of the applications below online.
             </p>
-            <div className="bg-gray-50 rounded-lg p-6 mb-8">
-              <p className="text-charcoal font-medium">You can also mail or drop off your application:</p>
-              <p className="text-slate mt-2">Dutch Craft</p>
-              <p className="text-slate">{contact.address.street}</p>
-              <p className="text-slate">{contact.address.city}, {contact.address.state} {contact.address.zip}</p>
-              <p className="text-slate mt-3">
-                Applications are also available for in-person pickup Monday–Friday, 8:00 AM to 5:00 PM.
-              </p>
-            </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <div className="flex-1 text-center">
+            <div className="flex flex-col sm:flex-row items-stretch gap-4">
+              <div className="flex-1 flex flex-col text-center">
                 <Link
                   href="/careers/driver-application"
-                  className="block bg-sky-300 text-white py-3 px-6 rounded-lg font-medium hover:bg-sky-300/90 transition-colors"
+                  className="flex-1 flex flex-col items-center justify-center bg-sky-300 text-white py-3 px-6 rounded-lg font-medium hover:bg-sky-300/90 transition-colors"
                 >
                   Driver Application
                   <span className="block text-sm text-white/70 mt-1">Class A Required</span>
@@ -72,12 +60,13 @@ export default function CareersPage() {
                   Download printable version (PDF)
                 </a>
               </div>
-              <div className="flex-1 text-center">
+              <div className="flex-1 flex flex-col text-center">
                 <Link
                   href="/careers/factory-application"
-                  className="block bg-sky-300 text-white py-3 px-6 rounded-lg font-medium hover:bg-sky-300/90 transition-colors"
+                  className="flex-1 flex flex-col items-center justify-center bg-sky-300 text-white py-3 px-6 rounded-lg font-medium hover:bg-sky-300/90 transition-colors"
                 >
                   Factory Application
+                  <span className="block text-sm text-white/70 mt-1">&nbsp;</span>
                 </Link>
                 <a
                   href="/careers/factory-application.pdf"
