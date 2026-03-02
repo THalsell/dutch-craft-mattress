@@ -122,6 +122,10 @@ export default function Header() {
           <Link href="/contact" className={linkClass}>
             Contact
           </Link>
+
+          <Link href="/register-mattress" className={linkClass}>
+            Register Mattress
+          </Link>
         </nav>
 
         {/* Mobile slide-down nav */}
@@ -220,6 +224,14 @@ export default function Header() {
             className={linkClass}
           >
             Contact
+          </Link>
+
+          <Link
+            href="/register-mattress"
+            onClick={() => setMenuOpen(false)}
+            className={linkClass}
+          >
+            Register Mattress
           </Link>
         </nav>
       </div>
