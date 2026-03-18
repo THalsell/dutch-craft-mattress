@@ -54,6 +54,8 @@ export interface Collection {
   warranty: string;
   features: string;
   image?: string;
+  nameImage?: string;
+  nameImageClassName?: string;
   heroColor?: string;
   heroImage?: string;
   modelBoxColor?: string;
@@ -108,6 +110,8 @@ export const collections: Collection[] = [
   {
     slug: "comfort-response",
     name: "Comfort Response",
+    nameImage: "/collections/comfort-response/cr-icon.png",
+    nameImageClassName: "mb-4 w-auto max-h-40 object-contain",
     description: "Responsive cushioning that adapts to your body for personalized comfort.",
     modelBoxColor: "#323f55",
     warranty: "15-year non-prorated warranty",
@@ -241,6 +245,8 @@ export const collections: Collection[] = [
   {
     slug: "nightfall",
     name: "Nightfall",
+    nameImage: "/collections/nightfall/nightfall-icon.png",
+    nameImageClassName: "mb-4 w-auto max-h-40 object-contain",
     description: "Plush layers designed for deep, uninterrupted sleep.",
     modelBoxColor: "#3d4356",
     warranty: "15-year non-prorated warranty",
@@ -531,18 +537,20 @@ export const collections: Collection[] = [
   {
     slug: "posture-perfect",
     name: "Posture Perfect",
+    nameImage: "/collections/posture-perfect/pp-icon.png",
+    nameImageClassName: "mb-4 w-auto max-h-40 object-contain",
     description: "Targeted support for proper spinal alignment and better posture.",
     modelBoxColor: "#7eb8d0",
     warranty: "10-year non-prorated warranty",
     features: "Exclusive 504 coil system with foam encased edge support.",
     image: "/collections/posture-perfect/posture-perfect-card.png",
     heroColor: "#a3d1e6",
-    comingSoon: true,
-    models: [],
   },
   {
     slug: "posture-perfect-gel",
     name: "Posture Perfect Gel",
+    nameImage: "/collections/posture-perfect-gel/pp-gel-icon.png",
+    nameImageClassName: "mb-4 w-auto max-h-40 object-contain",
     modelBoxColor: "#7eb8d0",
     description: "Gel-infused memory foam with posture support for a cooler sleep.",
     warranty: "15-year non-prorated warranty",
@@ -615,6 +623,8 @@ export const collections: Collection[] = [
   {
     slug: "posture-perfect-ice",
     name: "Posture Perfect ICE",
+    nameImage: "/collections/posture-perfect-ice/posture-perfect-ice-icon.png",
+    nameImageClassName: "mb-4 w-auto max-h-40 object-contain",
     description: "Advanced cooling technology paired with superior posture support.",
     image: "/collections/posture-perfect-ice/posture-perfect-ice-card.png",
     heroImage: "/collections/posture-perfect-ice/posture-perfect-ice-card.png",
@@ -728,6 +738,7 @@ export const collections: Collection[] = [
   {
     slug: "legacy-elite-hd",
     name: "Legacy Elite HD",
+    nameImage: "/collections/legacy-elite-hd/legacy-elite-icon.jpg",
     description: "Premium high-density construction for lasting comfort and support.",
     image: "/collections/legacy-elite-hd/legacy-card.png",
     heroImage: "/collections/legacy-elite-hd/legacy-hero.png",

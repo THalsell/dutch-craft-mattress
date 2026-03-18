@@ -19,9 +19,9 @@ function getAllModels(collection: Collection): Model[] {
 }
 
 export async function generateMetadata(
-  { params }: { params: { slug: string; model: string } }
+  { params }: { params: Promise<{ slug: string; model: string }> }
 ): Promise<Metadata> {
-  const { slug, model: modelSlug } = params;
+  const { slug, model: modelSlug } = await params;
 
   const collection = collections.find((c) => c.slug === slug);
   if (!collection) return {};
@@ -49,9 +49,9 @@ export function generateStaticParams() {
 export default async function ModelPage({
   params,
 }: {
-  params: { slug: string; model: string };
+  params: Promise<{ slug: string; model: string }>;
 }) {
-  const { slug, model: modelSlug } = params;
+  const { slug, model: modelSlug } = await params;
 
   const collection = collections.find((c) => c.slug === slug);
   if (!collection) return notFound();

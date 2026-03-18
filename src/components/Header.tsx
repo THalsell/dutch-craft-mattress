@@ -15,18 +15,12 @@ const collections = [
   { name: "Legacy Elite HD", slug: "legacy-elite-hd" },
 ];
 
-const aboutSubLinks = [
-  { href: "/about", label: "Our Story" },
-  { href: "/why-were-different", label: "Why We're Different" },
-  { href: "/warranty-and-care", label: "Warranty & Care" },
-];
 
 const linkClass = "font-bold text-charcoal hover:text-sky-300 transition-colors";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [collectionsOpen, setCollectionsOpen] = useState(false);
-  const [aboutOpen, setAboutOpen] = useState(false);
 
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 768px)");
@@ -72,7 +66,7 @@ export default function Header() {
             <Link href="/collections" className={linkClass}>
               Collections
             </Link>
-            <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 hidden group-hover:block z-50">
+            <div className="absolute left-0 top-full pt-2 hidden group-hover:block z-50">
               <div className="bg-white border border-border rounded-lg shadow-lg py-2 min-w-55">
                 {collections.map((c) => (
                   <Link
@@ -81,26 +75,6 @@ export default function Header() {
                     className="block px-4 py-2 text-sm text-charcoal hover:bg-fog hover:text-sky-300 transition-colors"
                   >
                     {c.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* About Us dropdown */}
-          <div className="relative group">
-            <Link href="/about" className={linkClass}>
-              About Us
-            </Link>
-            <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 hidden group-hover:block z-50">
-              <div className="bg-white border border-border rounded-lg shadow-lg py-2 min-w-48">
-                {aboutSubLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="block px-4 py-2 text-sm text-charcoal hover:bg-fog hover:text-sky-300 transition-colors"
-                  >
-                    {link.label}
                   </Link>
                 ))}
               </div>
@@ -117,10 +91,6 @@ export default function Header() {
 
           <Link href="/partner-with-us" className={linkClass}>
             Partner with Us
-          </Link>
-
-          <Link href="/contact" className={linkClass}>
-            Contact
           </Link>
 
           <Link href="/register-mattress" className={linkClass}>
@@ -164,36 +134,6 @@ export default function Header() {
             )}
           </div>
 
-          {/* About Us */}
-          <div>
-            <button
-              onClick={() => setAboutOpen(!aboutOpen)}
-              className={`${linkClass} flex items-center gap-1`}
-            >
-              About Us
-              <svg
-                className={`w-4 h-4 transition-transform ${aboutOpen ? "rotate-180" : ""}`}
-                fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            {aboutOpen && (
-              <div className="flex flex-col gap-2 pl-4 mt-2">
-                {aboutSubLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="text-sm text-charcoal hover:text-sky-300 transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-
           <Link
             href="/find-a-retailer"
             onClick={() => setMenuOpen(false)}
@@ -216,14 +156,6 @@ export default function Header() {
             className={linkClass}
           >
             Partner with Us
-          </Link>
-
-          <Link
-            href="/contact"
-            onClick={() => setMenuOpen(false)}
-            className={linkClass}
-          >
-            Contact
           </Link>
 
           <Link
